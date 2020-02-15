@@ -3,5 +3,6 @@ from django.contrib.auth.models import AbstractUser
 from django.conf import settings
 
 class User(AbstractUser):
-    role = models.CharField(max_length=20)
+    uid = models.AutoField(primary_key=True)
+    role = models.CharField(max_length=20, default='GUEST')
     upic = models.TextField()

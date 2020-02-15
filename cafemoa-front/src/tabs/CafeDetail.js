@@ -43,9 +43,10 @@ class CafeDetail extends React.Component {
     
     componentDidMount(){
         const base_url = process.env.REACT_APP_SERVER_IP
-        const ccid = this.props.location.cafe.ccid
-        axios.get(base_url + `/cafe/${ccid}`)
+        const ccid = this.props.location.cafe.id
+        axios.get(base_url + `/cafes/${ccid}/`)
             .then(response =>{
+            console.log(response)
             this.setState({
                 cafe: response.data,
                 ccid: ccid
@@ -94,11 +95,6 @@ class CafeDetail extends React.Component {
                                             </Link>
                                          );
                                          else return (
-                                            // <Link to={{
-                                            //     pathname:'/latte/login',
-                                            //     }}>
-                                            // <Button type="primary">로그인하고 주문하기</Button>
-                                            // </Link>
                                             <div>
                                                 <Button type="primary" onClick={this.showModal}>로그인하고 주문하기</Button>
                                                     <Modal

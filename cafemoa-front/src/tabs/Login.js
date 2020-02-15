@@ -3,6 +3,7 @@ import store from '../store';
 import { withRouter , Link } from 'react-router-dom';
 import axios from 'axios';
 import {Form, Input, Icon, Button } from 'antd';
+import jwtDecode from 'jwt-decode';
 
 class Login extends Component{
     state = {
@@ -19,33 +20,29 @@ class Login extends Component{
         e.preventDefault();
       
         const params = {
-            uid: this.state.id,
-            upass: this.state.pass
+            username: this.state.id,
+            password: this.state.pass
         }
  
         const base_url = process.env.REACT_APP_SERVER_IP
-        console.log(base_url)
-        axios.post(base_url + '/user/signin', params)
+        axios.post(base_url + '/login/', params)
         .then(response => {
             console.log('로그인 요청')
-            store.dispatch({type:'LOGIN', token:response.data.token})
-            
-            // 로컬스토리지에 저장하자!!
-            // 이 코드로 로컬 스토리지에 저장한 상태이고 다른거 할 거 없음!
-            localStorage.setItem(
-                "login_token",
-                JSON.stringify(response.data.token)
-            );
-            // let token = localStorage.getItem("login_token")
-            // console.log(token)
-            // 여기는 확인하는 코드!
-
-            // 여기서 이제 보내줄 곳 정해버린다. 근데 딱히 안해줘도 될듯 일단은.
-            // const user_state = store.getState().user_info
-            // console.log(user_state)
-            // this.props.history.push('/');
-            this.props.history.push('/');
-        }) 
+            // store.dispatch({type:'LOGIN', token:response.data.token})
+            console.log(response.data.token)
+            const decoded_token = jwtDecode(response.data.token)
+            const user_id = decoded_token.user_id
+            axios.get(base_url + `/accounts/${user_id}`)
+            .then(response => {
+                const user_data = response.data
+                store.dispatch({type:'LOGIN', user_data:user_data})
+                localStorage.setItem(
+                    "user_data",
+                    JSON.stringify(user_data)
+                );
+                this.props.history.push('/');
+            })
+        })
         .catch(error => {
             console.log('error')
             console.error(error)
