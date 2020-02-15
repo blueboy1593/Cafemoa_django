@@ -25,3 +25,13 @@ def menus(request, cafe_id):
     menus = cafe.menus.all()
     serializer = MenuSerializer(menus, many = True)
     return Response(serializer.data)
+
+
+@api_view(['POST'])
+def register(request):
+    print(request.data)
+    serializer = CafeSerializer(data=request.data)
+    print(serializer)
+    if serializer.is_valid(raise_exception=True):
+        serializer.save()
+    return Response(serializer.data)

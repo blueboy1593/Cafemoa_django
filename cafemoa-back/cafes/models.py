@@ -7,8 +7,9 @@ class Cafe(models.Model):
     cname = models.CharField(max_length=50)
     cdes = models.TextField()
     cpic = models.TextField()
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='cafe')
-
+    host = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='mycafe')
+    latitude = models.FloatField()
+    longitude = models.FloatField()
 
 class Menu(models.Model):
     mmid = models.AutoField(primary_key=True)
@@ -16,10 +17,12 @@ class Menu(models.Model):
     mname = models.CharField(max_length=50)
     mpic = models.TextField()
     mtype = models.CharField(max_length=20)
-    # mprice = models.IntegerField()
+    mprice = models.IntegerField()
+    # mamount = models.IntegerField(default=1)
 
 class Order(models.Model):
     ooid = models.AutoField(primary_key=True)
     cafe = models.ForeignKey(Cafe, on_delete=models.CASCADE, related_name='orders')
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='orders')
     content = models.TextField()
+    oprice = models.IntegerField()
