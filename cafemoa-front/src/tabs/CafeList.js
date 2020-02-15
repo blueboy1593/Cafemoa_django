@@ -78,7 +78,7 @@ class CafeList extends React.Component {
                         
                         renderItem={ cafe =>(
                             <Link to={{
-                                pathname:'/latte/cafedetail',
+                                pathname:`/latte/cafedetail/${cafe.ccid}`,
                                 cafe:cafe,
                             }}>
                             <List.Item

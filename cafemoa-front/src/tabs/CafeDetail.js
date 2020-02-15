@@ -2,7 +2,6 @@ import React from "react";
 import {
     Row,
     Col,
-    Rate,
     Button,
     Divider,
     Modal
@@ -14,6 +13,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import store from '../store';
 import Login from '../tabs/Login';
+import Kakaomap from "../components/Kakaomap";
 
 class CafeDetail extends React.Component {
     state = { visible: false
@@ -73,16 +73,13 @@ class CafeDetail extends React.Component {
                                 </Col>
                                 <Col span={1} />
                                 <Col span={13}>
-                                    <Card.Title>카페 이름</Card.Title>
-                                    <Card.Subtitle className="mb-2 text-muted">카페 위치 - {cafe.cloc}</Card.Subtitle>
-                                    <Card.Subtitle className="mb-2 text-muted">평점 <Rate disabled allowHalf defaultValue={2.5} /></Card.Subtitle>
+                                    <Card.Title>{cafe.cname}</Card.Title>
+                                    <Card.Subtitle className="mb-2 text-muted">
+                                        카페 지도
+                                        <Kakaomap latitude={cafe.latitude} longitude={cafe.longitude}/>
+                                    </Card.Subtitle>
                                     <Card.Text>
-                                        Some quick example text to build on the card title and make up the bulk
-                                        of the card's content.Some quick example text to build on the card title and make up the bulk
-                                        of the card's content.
-                                        Some quick example text to build on the card title and make up the bulk
-                                        of the card's content.Some quick example text to build on the card title and make up the bulk
-                                        of the card's content.
+                                        {cafe.cdes}
                                     </Card.Text>
                                     {function() {
                                         if (role === 'HOST' || role === 'GUEST') return (
@@ -129,10 +126,9 @@ class CafeDetail extends React.Component {
                                 />
                                 <Carousel.Caption>
                                     <h5>{menu.mname}</h5>
-                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                    <p>{menu.mprice}</p>
                                 </Carousel.Caption>
                                 </Carousel.Item>
-
                             ))}
                         </Carousel>
                     </div>

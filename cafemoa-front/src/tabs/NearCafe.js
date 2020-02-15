@@ -1,20 +1,15 @@
-import React, { Component } from 'react'
-
+import React, { Component } from 'react';
+import Kakaomap from '../components/Kakaomap';
 
 export default class NearCafe extends Component {
   constructor(props){
     super(props);
     this.state = {
-      latitude: 'a',
+      latitude: '',
       longitude: '',
     }
     this.success = this.success.bind(this)
-    // 어제 이거 못해가지고 시간 쓴거 생각하면....ㅎ
   }
-  // state = {
-  //   latitude: '',
-  //   longitude: '',
-  // }
 
   success(pos) {
     const crd = pos.coords;
@@ -38,6 +33,11 @@ export default class NearCafe extends Component {
         <p>현재 위치의</p>
         <p>위도는 {this.state.latitude}</p>
         <p>경도는 {this.state.longitude}</p>
+        {function () {
+          if (this.state.latitude !== '') {
+            return <Kakaomap latitude={this.state.latitude} longitude={this.state.longitude}></Kakaomap>    
+          }
+        }.bind(this)()}
       </div>
     )
   }
