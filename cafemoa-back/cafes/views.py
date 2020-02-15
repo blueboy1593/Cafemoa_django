@@ -27,11 +27,22 @@ def menus(request, cafe_id):
     return Response(serializer.data)
 
 
+# 카페 등록
 @api_view(['POST'])
 def register(request):
-    print(request.data)
     serializer = CafeSerializer(data=request.data)
-    print(serializer)
+    if serializer.is_valid(raise_exception=True):
+        serializer.save()
+    return Response(serializer.data)
+
+
+# 메뉴 등록
+@api_view(['POST'])
+def registermenu(request, cafe_id):
+    temp = request.data
+    temp['cafe'] = cafe_id
+    print(temp)
+    serializer = MenuSerializer(data=temp)
     if serializer.is_valid(raise_exception=True):
         serializer.save()
     return Response(serializer.data)

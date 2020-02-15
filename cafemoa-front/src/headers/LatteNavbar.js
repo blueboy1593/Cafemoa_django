@@ -60,6 +60,7 @@ export default class LatteNavbar extends Component {
                 else if (role === 'GUEST') return (
                   <>
                     <Link to='/latte'><img src="/img/cafeinfo.png" alt="카페정보" /></Link>
+                    <Link to='/latte/nearcafe'><img src="/img/nearcafe.png" alt="내 주변 카페" /></Link>
                     <Link to='/latte/order'><img src="/img/order.png" alt="주문하기" /></Link>
                     <Link to='/latte/basket'><img src="/img/shoppinglist.png" alt="장바구니" /></Link>
                   </>
