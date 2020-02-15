@@ -3,6 +3,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import Cafe, Menu
 from .serializers import CafeSerializer, MenuSerializer, CafeDetailSerializer
+from haversine import haversine
 
 
 @api_view(['GET'])
@@ -46,3 +47,21 @@ def registermenu(request, cafe_id):
     if serializer.is_valid(raise_exception=True):
         serializer.save()
     return Response(serializer.data)
+
+
+# @api_view(['POST'])
+# def distanceorder(request):
+#     position = request.data
+#     mypos = (position['latitude'], position['longitude'])
+#     cafes = Cafe.objects.all()
+#     for cafe in cafes:
+#         clat = cafe.latitude
+#         clon = cafe.longitude
+#         cpos = (clat, clon)
+#         dis = haversine(mypos, cpos) * 1000
+#         cafe['dis'] = dis
+#     print(cafes)
+#     # serializers = CafeSerializer(cafes, many = True)
+#     # print(cafes)
+#     # print(serializers.data)
+#     return Response('aaaaa')

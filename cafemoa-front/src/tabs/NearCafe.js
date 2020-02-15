@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Kakaomap from '../components/Kakaomap';
+import NearCafeList from '../components/NearCafeList';
 
 export default class NearCafe extends Component {
   constructor(props){
@@ -35,7 +36,12 @@ export default class NearCafe extends Component {
         <p>경도는 {this.state.longitude}</p>
         {function () {
           if (this.state.latitude !== '') {
-            return <Kakaomap latitude={this.state.latitude} longitude={this.state.longitude}></Kakaomap>    
+            return (
+              <>
+              <Kakaomap latitude={this.state.latitude} longitude={this.state.longitude}></Kakaomap>
+              <NearCafeList latitude={this.state.latitude} longitude={this.state.longitude}></NearCafeList>
+              </>
+            )
           }
         }.bind(this)()}
       </div>

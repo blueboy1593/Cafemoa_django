@@ -29,6 +29,22 @@
   "latitude": 37.350279,
   "longitude": 127.106704
 }
+{
+  "cname": "미금카페베네",
+  "cdes": "미금역 2번 출구에 있음",
+  "cpic": "https://img.tf.co.kr/article/home/2018/07/13/20188012153167044000.jpg",
+  "host": 2,
+  "latitude": 37.350321,
+  "longitude": 127.110384
+}
+{
+  "cname": "역삼바나프레소",
+  "cdes": "멀캠 옆에 있어",
+  "cpic": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS7kvHEShJ2lqRNb3OuehnjIDIazlowgNUbwbvuLzlmV8mWKmET",
+  "host": 2,
+  "latitude": 37.501130,
+  "longitude": 127.039131
+}
 ```
 
 ## menu 등록 post 
@@ -57,6 +73,10 @@
   "mpic": "https://snaptime.edaily.co.kr/wp-content/uploads/2019/07/tyle-hws-01-1562802184-700x700.png",
   "mprice": "2000",
   "mtype": "LATTE"
+}
+{
+  "latitude": 37.2871987,
+  "longitude": 127.0577896
 }
 ```
 
