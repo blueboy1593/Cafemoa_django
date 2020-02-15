@@ -19,3 +19,12 @@ def detail(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     serializer = UserSerializer(user)
     return Response(serializer.data)
+
+
+@api_view(['POST'])
+def signup(request):
+    # print(request.data)
+    serializer = UserSerializer(data=request.data)
+    if serializer.is_valid(raise_exception=True):   # 검증에 실패하면 400 Bad Request 오류를 발생
+        serializer.save()  # 에러가 난다는 것은 코드 오류가 있다는 것...?
+    return Response(serializer.data)

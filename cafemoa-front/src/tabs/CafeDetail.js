@@ -11,7 +11,6 @@ import 'antd/dist/antd.css';
 import { Link } from 'react-router-dom';
 import { Card, Carousel } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Review from '../components/Review';
 import axios from 'axios';
 import store from '../store';
 import Login from '../tabs/Login';
@@ -43,7 +42,7 @@ class CafeDetail extends React.Component {
     
     componentDidMount(){
         const base_url = process.env.REACT_APP_SERVER_IP
-        const ccid = this.props.location.cafe.id
+        const ccid = this.props.location.cafe.ccid
         axios.get(base_url + `/cafes/${ccid}/`)
             .then(response =>{
             console.log(response)
@@ -137,10 +136,6 @@ class CafeDetail extends React.Component {
                             ))}
                         </Carousel>
                     </div>
-               
-                    {/* 카페 번호를 받아와서 해당 리뷰를 띄워야함  */}
-                    <Review></Review>
-
                 </Col>
                 <Col span={1} />
             </Row>

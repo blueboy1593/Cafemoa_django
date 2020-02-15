@@ -30,7 +30,7 @@ class Order extends React.Component {
         const base_url = process.env.REACT_APP_SERVER_IP
         const ccid = this.props.location.ccid
 
-        axios.get(base_url + `/menu/${ccid}`)
+        axios.get(base_url + `/cafes/menus/${ccid}`)
             .then(response =>{
             this.setState({
                 menulist: response.data

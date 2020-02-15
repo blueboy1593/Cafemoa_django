@@ -3,15 +3,14 @@ import {
     Form,
     Modal,
     InputNumber,
-    Select,
-    Checkbox
+    // Select,
+    // Checkbox
 } from 'antd';
 import 'antd/dist/antd.css';
 import { Card } from 'react-bootstrap';
-// import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const { Option } = Select;
+// const { Option } = Select;
 
 export default class MenuModal extends Component {
     state = { visible: false,
@@ -43,11 +42,11 @@ export default class MenuModal extends Component {
     render() {
         const menu = this.props.menu
 
-        const options = [
-            { label: '헤이즐넛 시럽 추가', value: '1' },
-            { label: '샷 추가', value: '2' },
-            { label: '휘핑 추가', value: '3' },
-        ];
+        // const options = [
+        //     { label: '헤이즐넛 시럽 추가', value: '1' },
+        //     { label: '샷 추가', value: '2' },
+        //     { label: '휘핑 추가', value: '3' },
+        // ];
 
         return (
             <div>
@@ -76,7 +75,7 @@ export default class MenuModal extends Component {
                         <Form.Item label="수량">
                             <InputNumber id="quan" min={1} max={10} defaultValue={1} />
                         </Form.Item>
-                        <Form.Item label="얼음">
+                        {/* <Form.Item label="얼음">
                             <Select>
                                 <Option value="1">기본</Option>
                                 <Option value="2">얼음많이</Option>
@@ -85,7 +84,7 @@ export default class MenuModal extends Component {
                         </Form.Item>
                         <Form.Item label="옵션">
                             <Checkbox.Group options={options} />
-                        </Form.Item>
+                        </Form.Item> */}
                     </Form>
                 </Modal>
             </div>

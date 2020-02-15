@@ -17,3 +17,11 @@ def detail(request, cafe_id):
     cafe = get_object_or_404(Cafe, pk=cafe_id)
     serializer = CafeDetailSerializer(cafe)
     return Response(serializer.data)
+
+
+@api_view(['GET'])
+def menus(request, cafe_id):
+    cafe = get_object_or_404(Cafe, pk=cafe_id)
+    menus = cafe.menus.all()
+    serializer = MenuSerializer(menus, many = True)
+    return Response(serializer.data)

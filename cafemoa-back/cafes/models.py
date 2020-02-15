@@ -16,7 +16,7 @@ class Menu(models.Model):
     mname = models.CharField(max_length=50)
     mpic = models.TextField()
     mtype = models.CharField(max_length=20)
-
+    # mprice = models.IntegerField()
 
 class Order(models.Model):
     ooid = models.AutoField(primary_key=True)

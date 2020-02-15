@@ -4,7 +4,7 @@ import store from '../store';
 
 export default class Logout extends Component {
   render() {
-    localStorage.removeItem("login_token");
+    localStorage.removeItem("user_data");
     store.dispatch({type:'LOGOUT'})
     return (
       <div>
