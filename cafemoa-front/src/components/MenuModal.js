@@ -9,8 +9,8 @@ import {
 import 'antd/dist/antd.css';
 import { Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import store from '../store';
 
-// const { Option } = Select;
 
 export default class MenuModal extends Component {
     state = { visible: false,
@@ -25,11 +25,32 @@ export default class MenuModal extends Component {
         });
     };
 
-    handleOk = e => {
+    onChange = (value) => {
+        console.log('changed', value);
+        this.setState({
+            value: value,
+        });
+    };
+
+    handleOk = (e) => {
+        console.log(this)
+        console.log(e)
+        const menu = this.props.menu
         this.setState({
             visible: false,
         });
-        
+        const uid = store.getState().user_info.uid
+        store.dispatch({type:'BASKET', 
+            data: {
+                ccid: menu.cafe,
+                uid: uid,
+                menu: {
+                    mname:menu.mname,
+                    mprice:menu.mprice,
+                    mamount:this.state.value
+                }
+            }
+        })
     };
 
     handleCancel = e => {
@@ -41,13 +62,7 @@ export default class MenuModal extends Component {
 
     render() {
         const menu = this.props.menu
-
-        // const options = [
-        //     { label: '헤이즐넛 시럽 추가', value: '1' },
-        //     { label: '샷 추가', value: '2' },
-        //     { label: '휘핑 추가', value: '3' },
-        // ];
-
+        // console.log(menu)
         return (
             <div>
                 <Card style={{  width: '70%', textAlign: 'center' }} onClick={this.showModal} >
@@ -56,7 +71,6 @@ export default class MenuModal extends Component {
                         <Card.Text>
                             {menu.mname}
                         </Card.Text>
-                       
                     </Card.Body>
                 </Card>
                 <Modal
@@ -73,18 +87,8 @@ export default class MenuModal extends Component {
                     </div>
                     <Form labelCol={{ span: 5 }} wrapperCol={{ span: 12 }}>
                         <Form.Item label="수량">
-                            <InputNumber id="quan" min={1} max={10} defaultValue={1} />
+                            <InputNumber id="quan" min={1} max={10} defaultValue={1} onChange={this.onChange}/>
                         </Form.Item>
-                        {/* <Form.Item label="얼음">
-                            <Select>
-                                <Option value="1">기본</Option>
-                                <Option value="2">얼음많이</Option>
-                                <Option value="3">얼음적게</Option>
-                            </Select>
-                        </Form.Item>
-                        <Form.Item label="옵션">
-                            <Checkbox.Group options={options} />
-                        </Form.Item> */}
                     </Form>
                 </Modal>
             </div>

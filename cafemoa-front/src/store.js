@@ -32,6 +32,22 @@ export default createStore(function(state, action){
             upic: '',
         }
     }
+
+    if (action.type === 'BASKET'){
+        if (state.basket === undefined) {
+            state.basket = {
+                ccid:action.data.ccid,
+                uid:action.data.uid,
+                menu:[action.data.menu]
+            }
+        } else {
+            // state.basket.menu = [
+            //     ...,
+                
+            // ]
+            
+        }
+    }
     return state;
 }, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )

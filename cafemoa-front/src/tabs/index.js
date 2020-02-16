@@ -1,7 +1,6 @@
 export { default as CafeList } from './CafeList';
 export { default as Login } from './Login';
 export { default as Signup } from './Signup';
-export { default as FindCafe } from './FindCafe';
 export { default as Mypage } from './Mypage';
 export { default as RegisterCafe } from './RegisterCafe';
 export { default as RegisterMenu } from './RegisterMenu';
