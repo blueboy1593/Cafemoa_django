@@ -13,7 +13,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import store from '../store';
 import Login from '../tabs/Login';
-import Kakaomap from "../components/Kakaomap";
+import KakaomapDetail from "../components/KakaomapDetail";
 
 class CafeDetail extends React.Component {
     state = { visible: false
@@ -41,8 +41,10 @@ class CafeDetail extends React.Component {
     };
     
     componentDidMount(){
+        // this.props.match.params.value
         const base_url = process.env.REACT_APP_SERVER_IP
-        const ccid = this.props.location.cafe.ccid
+        // const ccid = this.props.location.cafe.ccid
+        const ccid = this.props.match.params.value
         axios.get(base_url + `/cafes/${ccid}/`)
             .then(response =>{
             console.log(response)
@@ -75,8 +77,7 @@ class CafeDetail extends React.Component {
                                 <Col span={13}>
                                     <Card.Title>{cafe.cname}</Card.Title>
                                     <Card.Subtitle className="mb-2 text-muted">
-                                        카페 지도
-                                        <Kakaomap latitude={cafe.latitude} longitude={cafe.longitude}/>
+                                        
                                     </Card.Subtitle>
                                     <Card.Text>
                                         {cafe.cdes}
@@ -100,7 +101,7 @@ class CafeDetail extends React.Component {
                                                     onCancel={this.handleCancel}
                                                     footer={null}
                                                     >
-                                                    <Login ></Login>
+                                                    <Login ccid={ccid}></Login>
                                                 </Modal>
                                             </div>
                                          );
@@ -108,11 +109,15 @@ class CafeDetail extends React.Component {
                                 </Col>
                             </Row>
                         </Card.Body>
+                        <hr></hr>
+                        <Card.Footer>
+                        <KakaomapDetail latitude={cafe.latitude} longitude={cafe.longitude}/>
+                        </Card.Footer>
                     </Card>
                     
                     <Divider>대표 메뉴</Divider>
                     <div style={{ textAlign: 'center' }}>
-                        <Carousel style={{ width: '25rem', display: 'inline-block' }}>
+                        <Carousel style={{ width: '20rem', display: 'inline-block' }}>
                             {menus.map(menu => (
                                 <Carousel.Item 
                                     key = {menu.mmid}

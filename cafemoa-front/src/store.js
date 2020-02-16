@@ -14,7 +14,7 @@ export default createStore(function(state, action){
                 role: 'VISITOR',
                 uid: '',
                 username: '',
-                upic: '',
+                unickname: '',
             }
         }
     }
@@ -29,7 +29,7 @@ export default createStore(function(state, action){
             role: 'VISITOR',
             uid: '',
             username: '',
-            upic: '',
+            unickname: '',
         }
     }
 
@@ -38,16 +38,21 @@ export default createStore(function(state, action){
             state.basket = {
                 ccid:action.data.ccid,
                 uid:action.data.uid,
-                menu:[action.data.menu]
+                menus:[action.data.menu]
             }
         } else {
-            // state.basket.menu = [
-            //     ...,
-                
-            // ]
-            
+            // console.log(action.data.menu)
+            // const arr = state.basket.menus
+            // console.log(arr)
+            // arr.push(action.data.menu)
+            // 수많은 시행착오의 결과...ㅎ
+            state.basket.menus = [
+                ...state.basket.menus,
+                action.data.menu
+            ]
         }
     }
+    console.log(state.basket)
     return state;
 }, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )

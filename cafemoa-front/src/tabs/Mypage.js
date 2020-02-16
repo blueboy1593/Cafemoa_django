@@ -9,12 +9,6 @@ export default class Mypage extends Component {
     render() {
         const storage = localStorage
         console.log(storage)
-        localStorage.setItem(
-            "user3",
-            JSON.stringify({
-                token: this.state.id,
-            })
-        );
         console.log(storage)
         let token = localStorage.getItem("userInfo")
         console.log(token)

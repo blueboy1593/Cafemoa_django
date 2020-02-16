@@ -30,10 +30,10 @@ export default class NearCafe extends Component {
     this.geolocation()
     return (
       <div>
-        <h1>주변 매장 찾는 게시판</h1>
-        <p>현재 위치의</p>
+        <h2>당신의 위치입니다.</h2>
+        {/* <p>현재 위치의</p>
         <p>위도는 {this.state.latitude}</p>
-        <p>경도는 {this.state.longitude}</p>
+        <p>경도는 {this.state.longitude}</p> */}
         {function () {
           if (this.state.latitude !== '') {
             return (
