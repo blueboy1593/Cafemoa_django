@@ -4,9 +4,8 @@ import { Link } from 'react-router-dom';
 import store from '../store';
 import { Modal, Button} from 'antd';
 import Login from '../tabs/Login';
-import jQuery from "jquery";
-import $ from "jquery";
-window.$ = window.jQuery = jQuery;
+// import jQuery from "jquery";
+// window.$ = window.jQuery = jQuery;
 
 // Navbar랑 이름이 중복됨.
 export default class LatteNavbar extends Component {
@@ -119,12 +118,6 @@ export default class LatteNavbar extends Component {
                 src="/img/myPage_icon.png"
                 className="d-inline-block align-top main_mypage"/>{' '}
           </Nav>
-
-
-
-          
-
-
       </Navbar>
     
       </div>

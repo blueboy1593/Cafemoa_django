@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-
-import { CafeList, Login, Signup, NearCafe, CafeDetail, Order, Mypage, Basket } from '../tabs';
+import { Main, CafeList, Login, Signup, NearCafe, CafeDetail, Order, Mypage, Basket } from '../tabs';
 import LatteNavbar from '../headers/LatteNavbar';
 import Logout from '../components/Logout';
 
