@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react'
 
-export default class Kakaomap extends Component {
+export default class KakaomapDetail extends Component {
     componentDidMount() {
         const lat = this.props.latitude
         const long = this.props.longitude
@@ -21,7 +21,7 @@ export default class Kakaomap extends Component {
     render() {
         return (
             <div>
-                <div id="map" style={{width:'350px', height:'280px'}}></div>
+                <div id="map" style={{width:'300px', height:'240px'}}></div>
             </div>
         )
     }

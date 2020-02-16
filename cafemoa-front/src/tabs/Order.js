@@ -3,8 +3,6 @@ import {
     Collapse,
     Row,
     Col,
-    Form,
-    Input,
     Button,
     List
 } from 'antd';
@@ -44,42 +42,43 @@ class Order extends React.Component {
             return null;
         }
         const menulist = this.state.menulist
-
+        const coffelist = menulist.filter(menu => {
+            if (menu.mtype === "커피") {
+                return menu
+            }
+            return null;
+        })
+        console.log(coffelist)
         return (
             <Row>
                 <Col span={1} />
                 <Col span={22}>
-                    <Row>
-                        <Col span={8} />
-                        <Col span={8} >
-                            <Form layout="inline" onSubmit={this.handleSearch}>
-                                <Form.Item>
-                                    <Input type="text" />
-                                    <Button type="primary" htmlType="submit">검색</Button>
-                                </Form.Item>
-                            </Form>
-                        </Col>
-                        <Col span={8} />
-                    </Row>
                     <Collapse accordion defaultActiveKey={['1']}>
-                        
                         <Panel header="모든 메뉴" key="1">
                             <List
                                 itemLayout="vertical"
                                 size="large"
-                                grid={{ column: 4 }}
+                                grid={{ column: 2 }}
                                 dataSource={menulist}
                                 renderItem={menu => (
                                     <List.Item key={menu.mmid} >
                                         <MenuModal menu={menu}></MenuModal>
                                     </List.Item>
-                                    
                                 )}
                             />
                         </Panel>
-
                         <Panel header="커피" key="2">
-                            <p>{text}</p>
+                            <List
+                                itemLayout="horizontal"
+                                size="medium"
+                                grid={{ column: 2 }}
+                                dataSource={coffelist}
+                                renderItem={menu => (
+                                    <List.Item key={menu.mmid} >
+                                        <MenuModal menu={menu}></MenuModal>
+                                    </List.Item>
+                                )}
+                            />
                         </Panel>
                         <Panel header="쥬스/스무디" key="3">
                             <p>{text}</p>
@@ -93,7 +92,7 @@ class Order extends React.Component {
                     <br />
                     <div style={{ textAlign: 'center' }}>
                         <Button>초기화</Button>{'   '}
-                        <Link to='/customer/shoppinglist'>
+                        <Link to='/latte/basket'>
                         <Button type="primary">장바구니로 가기</Button>
                         </Link>
                     </div>

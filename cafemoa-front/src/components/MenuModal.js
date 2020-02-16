@@ -14,7 +14,7 @@ import store from '../store';
 
 export default class MenuModal extends Component {
     state = { visible: false,
-              value:'',
+              value: 1,
               };
 
     showModal = () => {
@@ -33,8 +33,6 @@ export default class MenuModal extends Component {
     };
 
     handleOk = (e) => {
-        console.log(this)
-        console.log(e)
         const menu = this.props.menu
         this.setState({
             visible: false,
@@ -45,9 +43,11 @@ export default class MenuModal extends Component {
                 ccid: menu.cafe,
                 uid: uid,
                 menu: {
+                    key:menu.mmid,
                     mname:menu.mname,
+                    mpic:menu.mpic,
                     mprice:menu.mprice,
-                    mamount:this.state.value
+                    mquantity:this.state.value
                 }
             }
         })
@@ -65,11 +65,14 @@ export default class MenuModal extends Component {
         // console.log(menu)
         return (
             <div>
-                <Card style={{  width: '70%', textAlign: 'center' }} onClick={this.showModal} >
+                <Card style={{  width: '90%', textAlign: 'center', padding: '5%' }} onClick={this.showModal} >
                     <Card.Img variant="top" src={menu.mpic} alt={menu.mname} title={menu.mmid} style={{ width: '100%', height: 240 }} />
                     <Card.Body>
                         <Card.Text>
                             {menu.mname}
+                        </Card.Text>
+                        <Card.Text>
+                            {menu.mprice} 원
                         </Card.Text>
                     </Card.Body>
                 </Card>
@@ -85,9 +88,12 @@ export default class MenuModal extends Component {
                     <div style={{ textAlign: 'center' }}>
                         <img src={menu.mpic} alt="메뉴이미지" width="70%" />
                     </div>
-                    <Form labelCol={{ span: 5 }} wrapperCol={{ span: 12 }}>
-                        <Form.Item label="수량">
-                            <InputNumber id="quan" min={1} max={10} defaultValue={1} onChange={this.onChange}/>
+                    <hr></hr>
+                    <Form labelCol={{ span: 6 }} wrapperCol={{ span: 12 }}>
+                        <Form.Item style = {{ alignContent: 'center' }}>
+                            수량 : <InputNumber id="quan" min={1} max={10} defaultValue={1} onChange={this.onChange}/>
+                            <br></br>
+                            가격 : {menu.mprice}원
                         </Form.Item>
                     </Form>
                 </Modal>

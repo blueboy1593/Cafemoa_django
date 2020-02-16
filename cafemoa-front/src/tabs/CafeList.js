@@ -54,18 +54,18 @@ class CafeList extends React.Component {
                 <Col span={1} />
                 <Col span={22}>
                     <Row>
-                        <Col span={8} />
-                        <Col span={8} >
+                        <Col span={4} />
+                        <Col span={16} >
                             <Search
-                                placeholder="카페명을 검색해 주세요."
-                                enterButton="Search"
+                                placeholder="카페명으로 검색"
+                                enterButton="검색"
                                 size="large"
                                 onSearch={value => this.handleSearch(value)}
                             />
                         </Col>
-                        <Col span={8} />
+                        <Col span={4} />
                     </Row>
-                    <Divider orientation="left">현재 운영중인 카페</Divider>
+                    <Divider orientation="center">모든 카페</Divider>
                     
                     <List
                         itemLayout="vertical"
@@ -92,7 +92,6 @@ class CafeList extends React.Component {
                                     <List.Item.Meta
                                         title={cafe.cname}
                                     />
-                                    위치 : {cafe.cloc}
                                     <br/>
                                     평점 : <Rate disabled allowHalf defaultValue={2.5} />             
                                 </Card>

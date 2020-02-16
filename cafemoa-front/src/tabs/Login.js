@@ -40,6 +40,10 @@ class Login extends Component{
                     "user_data",
                     JSON.stringify(user_data)
                 );
+                if (this.props.ccid) {
+                  this.props.history.push(`/latte/cafedetail/${this.props.ccid}`);
+                  return
+                }
                 this.props.history.push('/');
             })
         })
@@ -50,44 +54,35 @@ class Login extends Component{
       }
     render(){
         return(
-
             <Form className="login-form" onSubmit={this.handleSubmit}>
             <Form.Item>
-                    <Input
-                        value={this.state.id}
-                        prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                        placeholder="아이디를 입력하시오"
-                        onChange={this.handleChange}
-                        name="id"
-                    />
+                <Input
+                    value={this.state.id}
+                    prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                    placeholder="아이디를 입력하시오"
+                    onChange={this.handleChange}
+                    name="id"
+                />
             </Form.Item>
             <Form.Item>
-                    <Input
-                        prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                        type="password"
-                        value={this.state.pass}
-                        placeholder="비밀번호를 입력하시오" 
-                        className="form-control"
-                        onChange={this.handleChange} 
-                        name="pass"
-                    />
+                <Input
+                    prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                    type="password"
+                    value={this.state.pass}
+                    placeholder="비밀번호를 입력하시오" 
+                    className="form-control"
+                    onChange={this.handleChange} 
+                    name="pass"
+                />
             </Form.Item>
             <Form.Item style={{textAlign: 'center'}}>
 
-            <Button type="primary" htmlType="submit" >
-                 로그인
-            </Button>
-            <br/>
-                <a href="https://kauth.kakao.com/oauth/authorize?client_id=f19ae1c386503f9082e85e5431870f4f&redirect_uri=http://localhost:3000/visitor/test&response_type=code">
-                 <img src="/img/kakao_login.png" width="250px" alt="카카오로그인" style={{margin: 10}} /><br />
-                </a>
-                
-                <img src="/img/naver_login.png" width="250px" alt="네이버로그인" />
+            <Button type="warning" htmlType="submit" >
+                로그인
+            </Button>    
             </Form.Item>
-            <Form.Item>
-                <Link className="login-form-forgot" to="/findId">아이디 찾기</Link>|
-                <Link className="login-form-forgot" to="/findPass">비밀번호 찾기</Link>
-                <p className="message">아이디가 없으신가요 ? <Link to='/visitor/signup'>회원가입하기 </Link></p>
+            <Form.Item>    
+                <p className="message">아이디가 없으신가요 ? <Link to='/latte/signup'>회원가입하기 </Link></p>
             </Form.Item>
         </Form>
         )

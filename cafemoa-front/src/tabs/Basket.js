@@ -8,16 +8,38 @@ import {
 import 'antd/dist/antd.css';
 import { Badge } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import store from '../store';
 
 class Basket extends React.Component {
+    state = {}
+
+    componentDidMount(){
+        const basket = store.getState().basket
+        console.log(basket)
+        this.setState({
+            basket: basket,
+        });
+    }
+
     render() {
-        // key값 다 수정해야 함~! 
+        if (this.state.basket === undefined) {
+            return null;
+        }
+        const data = this.state.basket.menus;
+        
+        var price = 0;
+        data.map(menu => {
+            const temp = menu.mprice * menu.mquantity
+            price = price + temp
+            return null;
+        })
+        console.log(price)
         const columns = [
             {
                 title: '메뉴 사진',
                 dataIndex: 'mpic',
-                key: 'mnpic',
-                // render: image => <img src={image} width="45px" alt="이미지" />,
+                key: 'mpic',
+                render: image => <img src={image} width="45px" alt="이미지" />,
             },
             {
                 title: '메뉴 이름',
@@ -30,11 +52,6 @@ class Basket extends React.Component {
                 dataIndex: 'mquantity',
                 key: 'mquantity',
                 // render: quantity => <a>{quantity}개</a>,
-            },
-            {
-                title: '옵션',
-                dataIndex: 'moption',
-                key: 'moption',
             },
             {
                 title: '가격',
@@ -52,32 +69,32 @@ class Basket extends React.Component {
 
 
         // 더미 데이터
-        const data = [
-            {
-                key: '1',
-                mpic: "https://image.istarbucks.co.kr/upload/store/skuimg/2015/08/[110563]_20150813222100303.jpg",
-                mname: 'John Brown',
-                mquantity: 1,
-                mprice: 4000,
-                moption: '샷 추가',
-            },
-            {
-                key: '2',
-                mpic: "https://image.istarbucks.co.kr/upload/store/skuimg/2015/08/[110563]_20150813222100303.jpg",
-                mname: 'John Brown',
-                mquantity: 2,
-                mprice: 3000,
-                moption: '없음',
-            },
-            {
-                key: '3',
-                mpic: "https://image.istarbucks.co.kr/upload/store/skuimg/2015/08/[110563]_20150813222100303.jpg",
-                mname: 'John Brown',
-                mquantity: 3,
-                mprice: 2500,
-                moption: '휘핑 추가',
-            },
-        ];
+        // const data = [
+        //     {
+        //         key: '1',
+        //         mpic: "https://image.istarbucks.co.kr/upload/store/skuimg/2015/08/[110563]_20150813222100303.jpg",
+        //         mname: 'John Brown',
+        //         mquantity: 1,
+        //         mprice: 4000,
+        //         moption: '샷 추가',
+        //     },
+        //     {
+        //         key: '2',
+        //         mpic: "https://image.istarbucks.co.kr/upload/store/skuimg/2015/08/[110563]_20150813222100303.jpg",
+        //         mname: 'John Brown',
+        //         mquantity: 2,
+        //         mprice: 3000,
+        //         moption: '없음',
+        //     },
+        //     {
+        //         key: '3',
+        //         mpic: "https://image.istarbucks.co.kr/upload/store/skuimg/2015/08/[110563]_20150813222100303.jpg",
+        //         mname: 'John Brown',
+        //         mquantity: 3,
+        //         mprice: 2500,
+        //         moption: '휘핑 추가',
+        //     },
+        // ];
 
         return (
             <Row>
@@ -85,7 +102,7 @@ class Basket extends React.Component {
                 <Col span={22}>
                     <Table columns={columns} dataSource={data} />
                     <div style={{ textAlign: 'right' }}>
-                        <h5>총 금액: 10000원 <Button>결제하기</Button></h5>
+                        <h5>총 금액: {price}원 <Button>결제하기</Button></h5>
                     </div>
                 </Col>
                 <Col span={1} />
