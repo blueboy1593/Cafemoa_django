@@ -10,7 +10,7 @@ export { default as NearCafe } from './NearCafe';
 export { default as CafeDetail } from './CafeDetail';
 export { default as Logout } from './Logout';
 export { default as Basket } from './Basket';
-
+export { default as Main } from './Main';
 
 
 export { default as Avatar } from './Picture';
