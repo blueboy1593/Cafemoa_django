@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
+
 import { CafeList, Login, Signup, NearCafe, CafeDetail, Order, Mypage, Basket } from '../tabs';
 import LatteNavbar from '../headers/LatteNavbar';
 import Logout from '../components/Logout';
@@ -9,6 +10,7 @@ class Latte extends Component{
       return (
         <div className="Latte">
           <LatteNavbar></LatteNavbar>
+          <Route exact path='/' component={Main}/>
           <Route exact path='/latte' component={CafeList}/>
           <Route path='/latte/cafedetail/:value' component={CafeDetail}/>
           <Route path='/latte/nearcafe' component={NearCafe}/>
