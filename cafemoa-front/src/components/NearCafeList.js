@@ -13,7 +13,6 @@ import axios from 'axios';
 
 class NearCafeList extends React.Component {
     state = {}
-    
     componentDidMount(){
         const base_url = process.env.REACT_APP_SERVER_IP
         axios.get(base_url + '/cafes')
@@ -65,15 +64,15 @@ class NearCafeList extends React.Component {
                 <Col span={22}>
                     <Row>
                     </Row>
-                    <Divider orientation="left">거리가 가까운 카페</Divider>
+                    <Divider orientation="center">거리가 가까운 카페</Divider>
                     
                     <List
                         itemLayout="vertical"
                         size="large"
                         pagination={{
-                            pageSize: 10
+                            pageSize: 6
                         }}
-                        grid={{ gutter: 36, column: 2 }}
+                        grid={{ gutter: 36, column: 1 }}
                         dataSource={cafeList}
                         
                         renderItem={ cafe =>(
@@ -82,6 +81,23 @@ class NearCafeList extends React.Component {
                                 cafe:cafe,
                             }}>
                             <List.Item
+                                key={cafe.ccid}>
+                                <div style={{ width: '100%', height: '150px', textAlign: 'center', backgroundColor: 'white' }}>
+                                    <img src={cafe.cpic} style={{  width: '130px', height: '130px', margin: '10px' }}/>
+                                    <div>{cafe.cname}</div>
+                                    나와의 거리 : {cafe.distance} m
+                                </div>
+                                {/* <Card 
+                                style={{ display: 'flex', width: '180px', textAlign: 'center', padding: '0', height: '200px' }}
+                                >
+                                    <img src={cafe.cpic} style={{  width: '100%', height: '150px' }}/>
+                                    <List.Item.Meta
+                                        title={cafe.cname}
+                                        content={cafe.distance}
+                                    />
+                                </Card> */}
+                            </List.Item>
+                            {/* <List.Item
                                 key={cafe.ccid}>
                                 <Card cover={
                                     <img
@@ -96,7 +112,7 @@ class NearCafeList extends React.Component {
                                     <br/>
                                     평점 : <Rate disabled allowHalf defaultValue={2.5} />             
                                 </Card>
-                            </List.Item>
+                            </List.Item> */}
                             </Link> 
                         )}
                     />

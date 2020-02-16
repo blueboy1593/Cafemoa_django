@@ -54,7 +54,7 @@ export default class LatteNavbar extends Component {
                 );
                 else if (role === 'GUEST') return (
                   <>
-                    <Link to='/latte' className="menuBarItem"><p className="menuBar_list">카페정보</p></Link>
+                    <Link to='/latte' className="menuBarItem"><p className="menuBar_list" onCLi>카페정보</p></Link>
                     <Link to='/latte/nearcafe' className="menuBarItem"><p className="menuBar_list">주변카페</p></Link>
                     <Link to='/latte/basket' className="menuBarItem"><p className="menuBar_list">장바구니</p></Link>
                   </>
@@ -114,9 +114,11 @@ export default class LatteNavbar extends Component {
             </Link>
           </Navbar.Brand>
           <Nav className="MyPage">
+            <Link to='/latte/mypage'>
             <img alt="모아 로고"
                 src="/img/myPage_icon.png"
                 className="d-inline-block align-top main_mypage"/>{' '}
+            </Link>
           </Nav>
       </Navbar>
     

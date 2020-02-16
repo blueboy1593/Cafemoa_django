@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Kakaomap from '../components/Kakaomap';
 import NearCafeList from '../components/NearCafeList';
+import { Divider } from 'antd';
 
 export default class NearCafe extends Component {
   constructor(props){
@@ -30,10 +31,7 @@ export default class NearCafe extends Component {
     this.geolocation()
     return (
       <div>
-        <h2>당신의 위치입니다.</h2>
-        {/* <p>현재 위치의</p>
-        <p>위도는 {this.state.latitude}</p>
-        <p>경도는 {this.state.longitude}</p> */}
+        <Divider orientation="center"><h5>현재 위치</h5></Divider>
         {function () {
           if (this.state.latitude !== '') {
             return (

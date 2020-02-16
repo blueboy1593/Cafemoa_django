@@ -6,7 +6,6 @@ import {
     Divider,
     List,
     Card,
-    Rate,
 } from 'antd';
 import 'antd/dist/antd.css';
 import { Link } from "react-router-dom";
@@ -65,13 +64,13 @@ class CafeList extends React.Component {
                         </Col>
                         <Col span={4} />
                     </Row>
-                    <Divider orientation="center">모든 카페</Divider>
+                    <Divider orientation="center"><h4>모든 카페</h4></Divider>
                     
                     <List
                         itemLayout="vertical"
                         size="large"
                         pagination={{
-                            pageSize: 10
+                            pageSize: 4
                         }}
                         grid={{ gutter: 36, column: 2 }}
                         dataSource={cafeList}
@@ -83,17 +82,23 @@ class CafeList extends React.Component {
                             }}>
                             <List.Item
                                 key={cafe.ccid}>
-                                <Card cover={
+                                <Card 
+                                style={{  width: '100%', textAlign: 'center', padding: '5%', height: '200px' }}
+                                cover={
                                     <img
                                         alt={cafe.cname}
                                         src={cafe.cpic}
+                                        // style={{  width: '90%', textAlign: 'center', padding: '5%', height: "250px" }}
                                     />
                                 }>
+                                    {/* <Card.Body style={{  padding: '10%' }}> */}
+                                        {/* <Card.Text>
+                                            {cafe.cname}
+                                        </Card.Text> */}
                                     <List.Item.Meta
                                         title={cafe.cname}
                                     />
-                                    <br/>
-                                    평점 : <Rate disabled allowHalf defaultValue={2.5} />             
+                                    {/* </Card.Body> */}
                                 </Card>
                             </List.Item>
                             </Link> 

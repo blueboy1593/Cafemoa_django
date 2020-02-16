@@ -20,8 +20,8 @@ export default class Kakaomap extends Component {
     }
     render() {
         return (
-            <div>
-                <div id="map" style={{width:'350px', height:'280px'}}></div>
+            <div className="map">
+                <div id="map" style={{width:'350px', height:'280px', margin: '0 auto', zIndex: '0' }}></div>
             </div>
         )
     }
