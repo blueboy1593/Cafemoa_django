@@ -4,10 +4,7 @@ import { Link } from 'react-router-dom';
 import store from '../store';
 import { Modal, Button} from 'antd';
 import Login from '../tabs/Login';
-// import jQuery from "jquery";
-// window.$ = window.jQuery = jQuery;
 
-// Navbar랑 이름이 중복됨.
 export default class LatteNavbar extends Component {
   state = { visible: false
   };
@@ -99,11 +96,6 @@ export default class LatteNavbar extends Component {
             }
           </Nav>
           </Navbar.Collapse>
-          {/* <Nav className="Menu">
-            <img alt="모아 로고"
-                src="/img/menuBtn_icon.png"
-                className="d-inline-block align-top main_menu"/>{' '}
-          </Nav> */}
           <Navbar.Brand>
             <Link to='/'>
               <img

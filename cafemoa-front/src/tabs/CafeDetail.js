@@ -14,6 +14,8 @@ import axios from 'axios';
 import store from '../store';
 import Login from '../tabs/Login';
 import KakaomapDetail from "../components/KakaomapDetail";
+import LatteNavbar from '../headers/LatteNavbar';
+
 
 class CafeDetail extends React.Component {
     state = { visible: false
@@ -64,6 +66,8 @@ class CafeDetail extends React.Component {
         const menus = cafe.menus
         const role = store.getState().user_info.role
         return (
+            <>
+            <LatteNavbar></LatteNavbar>
             <Row>
                 <Col span={1} />
                 <Col span={22}>
@@ -88,12 +92,12 @@ class CafeDetail extends React.Component {
                                                 pathname:'/latte/order',
                                                 ccid:ccid,
                                                 }}>
-                                            <Button type="warning">주문하기</Button>
+                                            <Button type="warning mainBtn">주문하기</Button>
                                             </Link>
                                          );
                                          else return (
                                             <div>
-                                                <Button type="warning" onClick={this.showModal}>로그인하고 주문하기</Button>
+                                                <Button type="warning mainBtn" onClick={this.showModal}>로그인하고 주문하기</Button>
                                                     <Modal
                                                     title="로 그 인"
                                                     visible={this.state.visible}
@@ -117,7 +121,7 @@ class CafeDetail extends React.Component {
                     
                     <Divider>대표 메뉴</Divider>
                     <div style={{ textAlign: 'center' }}>
-                        <Carousel style={{ width: '20rem', display: 'inline-block' }}>
+                        <Carousel style={{ width: '20rem', height: '20rem', display: 'inline-block' }}>
                             {menus.map(menu => (
                                 <Carousel.Item 
                                     key = {menu.mmid}
@@ -129,10 +133,6 @@ class CafeDetail extends React.Component {
                                     src={menu.mpic}
                                     alt={menu.mname}
                                 />
-                                <Carousel.Caption>
-                                    <h5>{menu.mname}</h5>
-                                    <p>{menu.mprice}</p>
-                                </Carousel.Caption>
                                 </Carousel.Item>
                             ))}
                         </Carousel>
@@ -140,6 +140,7 @@ class CafeDetail extends React.Component {
                 </Col>
                 <Col span={1} />
             </Row>
+            </>
         );
     }
 }

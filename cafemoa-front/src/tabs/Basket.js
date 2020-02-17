@@ -9,6 +9,8 @@ import 'antd/dist/antd.css';
 import { Badge } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import store from '../store';
+import LatteNavbar from '../headers/LatteNavbar';
+
 
 class Basket extends React.Component {
     state = {}
@@ -80,16 +82,19 @@ class Basket extends React.Component {
         ];
 
         return (
+            <>
+            <LatteNavbar></LatteNavbar>
             <Row>
                 <Col span={1} />
                 <Col span={22}>
                     <Table columns={columns} dataSource={data} />
                     <div style={{ textAlign: 'right' }}>
-                        <h5>총 금액: {price}원 <Button>결제하기</Button></h5>
+                        <h5>총 금액: {price}원 <Button className="mainBtn">결제하기</Button></h5>
                     </div>
                 </Col>
                 <Col span={1} />
             </Row>
+            </>
         );
     }
 }

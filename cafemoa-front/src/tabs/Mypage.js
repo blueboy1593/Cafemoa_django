@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-// import { Toast, ToastBody, ToastHeader } from 'reactstrap';
+import LatteNavbar from '../headers/LatteNavbar';
+
 
 
 export default class Mypage extends Component {
@@ -20,6 +21,7 @@ export default class Mypage extends Component {
 
         return (
             <div>
+                <LatteNavbar></LatteNavbar>
                 <h1>여기는 마이페이지! 여기서 작업하면 됨!</h1>
                 
                 {/* <UserInfo /> */}

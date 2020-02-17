@@ -11,14 +11,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import MenuModal from "../components/MenuModal";
 import { Link } from 'react-router-dom';
+import LatteNavbar from '../headers/LatteNavbar';
 
 const { Panel } = Collapse;
-
-const text = `
-  A dog is a type of domesticated animal.
-  Known for its loyalty and faithfulness,
-  it can be found as a welcome guest in many households across the world.
-`;
 
 class Order extends React.Component {
 
@@ -50,6 +45,8 @@ class Order extends React.Component {
         })
         // console.log(coffelist)
         return (
+            <>
+            <LatteNavbar></LatteNavbar>
             <Row>
                 <Col span={1} />
                 <Col span={22}>
@@ -81,26 +78,24 @@ class Order extends React.Component {
                             />
                         </Panel>
                         <Panel header="쥬스/스무디" key="3">
-                            <p>{text}</p>
                         </Panel>
                         <Panel header="차" key="4">
-                            <p>{text}</p>
                         </Panel>
 
                     </Collapse>
                   
                     <br />
                     <div style={{ textAlign: 'center' }}>
-                        <Button>초기화</Button>{'   '}
+                        <Button className="subBtn">뒤로</Button>{'   '}
                         <Link to='/latte/basket'>
-                        <Button type="primary">장바구니로 가기</Button>
+                        <Button className="mainBtn">장바구니</Button>
                         </Link>
                     </div>
 
                 </Col>
                 <Col span={1} />
             </Row>
-
+            </>
         );
     }
 }

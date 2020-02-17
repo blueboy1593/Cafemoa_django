@@ -5,6 +5,7 @@ import axios from 'axios';
 import {Form, Input, Icon, Button } from 'antd';
 import jwtDecode from 'jwt-decode';
 
+
 class Login extends Component{
     state = {
         id: '',
@@ -54,6 +55,7 @@ class Login extends Component{
       }
     render(){
         return(
+            <>
             <Form className="login-form" onSubmit={this.handleSubmit}>
             <Form.Item>
                 <Input
@@ -70,14 +72,13 @@ class Login extends Component{
                     type="password"
                     value={this.state.pass}
                     placeholder="비밀번호를 입력하시오" 
-                    className="form-control"
                     onChange={this.handleChange} 
                     name="pass"
                 />
             </Form.Item>
             <Form.Item style={{textAlign: 'center'}}>
 
-            <Button type="warning" htmlType="submit" >
+            <Button type="warning" htmlType="submit" className="loginBtn mainBtn" >
                 로그인
             </Button>    
             </Form.Item>
@@ -85,6 +86,7 @@ class Login extends Component{
                 <p className="message">아이디가 없으신가요 ? <Link to='/latte/signup'>회원가입하기 </Link></p>
             </Form.Item>
         </Form>
+        </>
         )
     }
 }

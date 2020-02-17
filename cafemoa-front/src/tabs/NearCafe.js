@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Kakaomap from '../components/Kakaomap';
 import NearCafeList from '../components/NearCafeList';
 import { Divider } from 'antd';
+import LatteNavbar from '../headers/LatteNavbar';
+
 
 export default class NearCafe extends Component {
   constructor(props){
@@ -31,6 +33,7 @@ export default class NearCafe extends Component {
     this.geolocation()
     return (
       <div>
+        <LatteNavbar></LatteNavbar>
         <Divider orientation="center"><h5>현재 위치</h5></Divider>
         {function () {
           if (this.state.latitude !== '') {

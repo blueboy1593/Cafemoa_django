@@ -10,6 +10,8 @@ import {
 import 'antd/dist/antd.css';
 import { Link } from "react-router-dom";
 import axios from 'axios';
+import LatteNavbar from '../headers/LatteNavbar';
+
 
 const { Search } = Input;
 
@@ -49,6 +51,8 @@ class CafeList extends React.Component {
         };
         
         return (
+            <>
+            <LatteNavbar></LatteNavbar>
             <Row>
                 <Col span={1} />
                 <Col span={22}>
@@ -56,15 +60,13 @@ class CafeList extends React.Component {
                         <Col span={4} />
                         <Col span={16} >
                             <Search 
-                                placeholder="카페명으로 검색"
-                               
                                 size="large"
                                 onSearch={value => this.handleSearch(value)}
                             />
                         </Col>
                         <Col span={4} />
                     </Row>
-                    <Divider orientation="center"><h4>모든 카페</h4></Divider>
+                    <Divider orientation="center"></Divider>
                     
                     <List
                         itemLayout="vertical"
@@ -107,6 +109,7 @@ class CafeList extends React.Component {
                 </Col>
                 <Col span={8} />
             </Row>
+            </>
         );
     }
 }

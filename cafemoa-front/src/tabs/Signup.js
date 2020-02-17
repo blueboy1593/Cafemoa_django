@@ -10,6 +10,8 @@ import {
 import 'antd/dist/antd.css';
 import axios from 'axios';
 import store from '../store';
+import LatteNavbar from '../headers/LatteNavbar';
+
 
 function getBase64(img, callback) {
     const reader = new FileReader();
@@ -133,15 +135,16 @@ class SignUpForm extends React.Component {
         };
 
         return (
+            <>
+            <LatteNavbar></LatteNavbar>
             <Row>
-                <Col span={1} />
-                <Col span={22}>
-                    <Divider>
-                    </Divider>
-                    <Form {...formItemLayout} onSubmit={this.handleSubmit}>
+                <Col span={2} />
+                <Col span={20}>
+                    <Divider>회원가입</Divider>
+                    <Form {...formItemLayout} onSubmit={this.handleSubmit} className="signupForm mainForm">
                         <Form.Item label="아이디">
                             <Row gutter={8}>
-                                <Col span={20}>
+                                <Col span={24}>
                                     {getFieldDecorator('uid', {
                                         rules: [
                                             {
@@ -155,7 +158,7 @@ class SignUpForm extends React.Component {
                         </Form.Item>
                         <Form.Item label="비밀번호" hasFeedback>
                             <Row gutter={8}>
-                                <Col span={20}>
+                                <Col span={24}>
                                     {getFieldDecorator('upass', {
                                         rules: [
                                             {
@@ -173,7 +176,7 @@ class SignUpForm extends React.Component {
                         </Form.Item>
                         <Form.Item label="비밀번호 확인" hasFeedback>
                             <Row gutter={8}>
-                                <Col span={20}>
+                                <Col span={24}>
                                     {getFieldDecorator('upassConfirm', {
                                         rules: [
                                             {
@@ -192,7 +195,7 @@ class SignUpForm extends React.Component {
 
                         <Form.Item label="이름">
                             <Row gutter={8}>
-                                <Col span={20}>
+                                <Col span={24}>
                                     {getFieldDecorator('uname', {
                                         rules: [
                                             { 
@@ -207,14 +210,15 @@ class SignUpForm extends React.Component {
                         </Form.Item>
                         <Form.Item {...tailFormItemLayout}>
                             {/* {this.state.role} */}
-                            <Button type="primary" htmlType="submit">
+                            <Button className="signupBtn mainBtn" htmlType="submit">
                               회원가입
                             </Button>
                         </Form.Item>
                     </Form>
                 </Col>
-                <Col span={1} />
+                <Col span={2} />
             </Row>
+        </>
         );
     }
 }
