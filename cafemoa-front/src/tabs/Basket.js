@@ -80,7 +80,7 @@ class Basket extends React.Component {
     render() {
         if (this.state.menus === undefined) {
             return (
-                <div>
+                <div style={{textAlign:'center'}} >
                     <LatteNavbar></LatteNavbar>
                     장바구니가 비었습니다.
                 </div>

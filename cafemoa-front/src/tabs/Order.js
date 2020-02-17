@@ -38,12 +38,29 @@ class Order extends React.Component {
         }
         const menulist = this.state.menulist
         const coffelist = menulist.filter(menu => {
-            if (menu.mtype === "커피") {
+            if (menu.mtype === "coffee") {
                 return menu
             }
             return null;
         })
-        // console.log(coffelist)
+        const juicelist = menulist.filter(menu => {
+            if (menu.mtype === "juice") {
+                return menu
+            }
+            return null;
+        })
+        const tealist = menulist.filter(menu => {
+            if (menu.mtype === "tea") {
+                return menu
+            }
+            return null;
+        })
+        const dessertlist = menulist.filter(menu => {
+            if (menu.mtype === "dessert") {
+                return menu
+            }
+            return null;
+        })
         return (
             <>
             <LatteNavbar></LatteNavbar>
@@ -51,20 +68,7 @@ class Order extends React.Component {
                 <Col span={1} />
                 <Col span={22}>
                     <Collapse accordion defaultActiveKey={['1']}>
-                        <Panel header="모든 메뉴" key="1">
-                            <List
-                                itemLayout="vertical"
-                                size="large"
-                                grid={{ column: 2 }}
-                                dataSource={menulist}
-                                renderItem={menu => (
-                                    <List.Item key={menu.mmid} >
-                                        <MenuModal menu={menu}></MenuModal>
-                                    </List.Item>
-                                )}
-                            />
-                        </Panel>
-                        <Panel header="커피" key="2">
+                        <Panel header="커피" key="1">
                             <List
                                 itemLayout="horizontal"
                                 size="medium"
@@ -77,11 +81,58 @@ class Order extends React.Component {
                                 )}
                             />
                         </Panel>
-                        <Panel header="쥬스/스무디" key="3">
+                        <Panel header="쥬스/스무디" key="2">
+                            <List
+                                itemLayout="horizontal"
+                                size="medium"
+                                grid={{ column: 2 }}
+                                dataSource={juicelist}
+                                renderItem={menu => (
+                                    <List.Item key={menu.mmid} >
+                                        <MenuModal menu={menu}></MenuModal>
+                                    </List.Item>
+                                )}
+                            />
                         </Panel>
-                        <Panel header="차" key="4">
+                        <Panel header="차" key="3">
+                            <List
+                                itemLayout="horizontal"
+                                size="medium"
+                                grid={{ column: 2 }}
+                                dataSource={tealist}
+                                renderItem={menu => (
+                                    <List.Item key={menu.mmid} >
+                                        <MenuModal menu={menu}></MenuModal>
+                                    </List.Item>
+                                )}
+                            />
                         </Panel>
-
+                        <Panel header="디저트" key="4">
+                            <List
+                                itemLayout="horizontal"
+                                size="medium"
+                                grid={{ column: 2 }}
+                                dataSource={dessertlist}
+                                renderItem={menu => (
+                                    <List.Item key={menu.mmid} >
+                                        <MenuModal menu={menu}></MenuModal>
+                                    </List.Item>
+                                )}
+                            />
+                        </Panel>
+                        <Panel header="모든 메뉴" key="5">
+                            <List
+                                itemLayout="vertical"
+                                size="large"
+                                grid={{ column: 2 }}
+                                dataSource={menulist}
+                                renderItem={menu => (
+                                    <List.Item key={menu.mmid} >
+                                        <MenuModal menu={menu}></MenuModal>
+                                    </List.Item>
+                                )}
+                            />
+                        </Panel>
                     </Collapse>
                   
                     <br />

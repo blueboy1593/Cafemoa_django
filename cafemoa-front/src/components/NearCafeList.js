@@ -87,7 +87,7 @@ class NearCafeList extends React.Component {
                                         <img src={cafe.cpic} alt={cafe.cname} style={{  width: '100%', height: '100px' }}/>
                                     </Col>
                                     <Col span={12}>
-                                    <List.Item.Meta
+                                    <List.Item.Meta style={{paddingTop:'10px'}}
                                         title={cafe.cname}
                                     />
                                     {cafe.distance} m

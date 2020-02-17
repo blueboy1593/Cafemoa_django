@@ -52,7 +52,7 @@ button {
 .navbar .navbar-toggler-icon{ width: 35px; height: 35px; background-image: url("../src/menuBtn_icon.png"); z-index: 5000;}
 .navbar .navbar-toggler-icon.on{ background-image: url("../src/menuBtn_icon_after.png"); z-index: 5000; }
 
-.navbar .navbar-collapse{ position: absolute; top: 52px; left: 0; background-color: #fff; width: 32%; height: 900px; padding-top: 70px; padding-left: 35px; box-sizing: border-box; z-index: 20 !important; }
+.navbar .navbar-collapse{ position: absolute; top: 0; left: 0; background-color: #fff; width: 32%; height: 900px; padding-top: 70px; padding-left: 35px; box-sizing: border-box; z-index: 20 !important; }
 
 .navbar .navbar-collapse *{ margin: 0; padding: 0; font-size: 14px; color: #f0853f; }
 
@@ -75,9 +75,9 @@ button {
 .navbar{ margin-bottom: 30px; }
 .navbar .main_mypage{ display: block; width: 35px; height: 35px; float: right; }
 .navbar .MyPage{ width: 20%; float: right; }
-
-
-
+.mypagelevels{ width: 100%; }
+.mypageicons { width: 33%; }
+.mypagelevel{ width: 70%; padding-bottom: 5%;}
 /********************** section **********************/
 
 /* .section1, .section2, .section3{ background-color: #fff; } */
@@ -93,7 +93,7 @@ button {
 
 /*  */
 .ant-input{ border: 0.5px solid #f0853f; border-radius: 0; }
-.ant-card{ height: 150px !important; }
+/* .ant-card{ height: 150px !important; } */
 .ant-list-item-meta-content{ height: 36px; }
 .ant-list-item-meta-title{ font-size: 14px !important; height: 36px; margin-bottom: 0 !important; }
 .ant-card-body{ padding: 10px;}

@@ -85,7 +85,7 @@ class CafeList extends React.Component {
                             <List.Item
                                 key={cafe.ccid}>
                                 <Card 
-                                style={{  width: '100%', textAlign: 'center', padding: '5%', height: '200px' }}
+                                style={{  width: '100%', textAlign: 'center', padding: '5%', height: '150px' }}
                                 cover={
                                     <img
                                         alt={cafe.cname}
