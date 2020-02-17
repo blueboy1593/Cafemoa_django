@@ -22,13 +22,6 @@ class NearCafeList extends React.Component {
             });
         };
 
-    handleSearch = (value) => {
-        console.log('Received values of Search: ', value);
-        this.setState({
-            keyword:value.toUpperCase()
-        })
-    };
-
     render() {
         if (this.state.cafeList === undefined) {
             return null;
@@ -102,22 +95,6 @@ class NearCafeList extends React.Component {
                                     </Row>
                                 </Card> 
                             </List.Item>
-                            {/* <List.Item
-                                key={cafe.ccid}>
-                                <Card cover={
-                                    <img
-                                        alt={cafe.cname}
-                                        src={cafe.cpic}
-                                    />
-                                }>
-                                    <List.Item.Meta
-                                        title={cafe.cname}
-                                    />
-                                    나와의 거리 : {cafe.distance} m
-                                    <br/>
-                                    평점 : <Rate disabled allowHalf defaultValue={2.5} />             
-                                </Card>
-                            </List.Item> */}
                             </Link> 
                         )}
                     />

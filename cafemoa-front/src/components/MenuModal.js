@@ -3,8 +3,6 @@ import {
     Form,
     Modal,
     InputNumber,
-    // Select,
-    // Checkbox
 } from 'antd';
 import 'antd/dist/antd.css';
 import { Card } from 'react-bootstrap';
@@ -18,7 +16,6 @@ export default class MenuModal extends Component {
               };
 
     showModal = () => {
-        // console.log(this.state)
         this.setState({
             visible: true
             
@@ -26,7 +23,7 @@ export default class MenuModal extends Component {
     };
 
     onChange = (value) => {
-        console.log('changed', value);
+        // console.log('changed', value);
         this.setState({
             value: value,
         });
@@ -38,7 +35,26 @@ export default class MenuModal extends Component {
             visible: false,
         });
         const uid = store.getState().user_info.uid
-        store.dispatch({type:'BASKET', 
+        const basket = store.getState().basket
+
+        if (basket === undefined) {
+            store.dispatch({type:'BASKET', 
+            data: {
+                ccid: menu.cafe,
+                uid: uid,
+                menu: {
+                    key:menu.mmid,
+                    mname:menu.mname,
+                    mpic:menu.mpic,
+                    mprice:menu.mprice,
+                    mquantity:this.state.value
+                }
+            }
+        })    
+        }
+        else {
+            // 다음에 하자 이 기능은.... ㅎ
+            store.dispatch({type:'BASKET', 
             data: {
                 ccid: menu.cafe,
                 uid: uid,
@@ -51,6 +67,8 @@ export default class MenuModal extends Component {
                 }
             }
         })
+        }
+        
     };
 
     handleCancel = e => {
@@ -92,7 +110,7 @@ export default class MenuModal extends Component {
                     </div>
                     <hr></hr>
                     <Form labelCol={{ span: 6 }} wrapperCol={{ span: 12 }}>
-                        <Form.Item style = {{ alignContent: 'center' }}>
+                        <Form.Item style = {{ alignContent: 'center', textAlign: 'center' }}>
                             수량 : <InputNumber id="quan" min={1} max={10} defaultValue={1} onChange={this.onChange}/>
                             <br></br>
                             가격 : {menu.mprice}원

@@ -114,3 +114,7 @@ button {
 
 
 .signupForm *{ text-align: center !important; }
+
+/* 모달 */
+.ant-modal-footer .ant-btn { background-color: #777; }
+.ant-modal-footer .ant-btn-primary { background-color: #f0853f; }
