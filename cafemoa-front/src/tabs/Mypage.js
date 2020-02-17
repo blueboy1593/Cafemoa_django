@@ -20,6 +20,7 @@ export default class Mypage extends Component {
     }
 
     render() {
+        const unickname = store.getState().user_info.unickname
         var iconnum = 1
         if (this.state) {
             var orderrecord = this.state.orderrecord
@@ -37,7 +38,7 @@ export default class Mypage extends Component {
                 <img className="mypageicons" src="/img/icon_grad_04.png" alt="mypageicon"/>
                 <img className="mypageicons" src="/img/icon_grad_05.png" alt="mypageicon"/>
                 <img className="mypagelevels" src="/img/levels3.png" alt="레벨"/>
-                <h4>나의 주문 횟수: {orderrecord} | 나의 레벨</h4>
+                <h4>{unickname}님의 주문 횟수: {orderrecord} | {unickname}님의 레벨</h4>
                 <br></br>
                 <img className="mypagelevel" src={`/img/level${iconnum}.png`} alt="레벨아이콘"/>
             </div>
