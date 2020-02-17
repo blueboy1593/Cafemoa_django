@@ -88,12 +88,12 @@ class CafeDetail extends React.Component {
                                                 pathname:'/latte/order',
                                                 ccid:ccid,
                                                 }}>
-                                            <Button type="primary">주문하기</Button>
+                                            <Button type="warning">주문하기</Button>
                                             </Link>
                                          );
                                          else return (
                                             <div>
-                                                <Button type="primary" onClick={this.showModal}>로그인하고 주문하기</Button>
+                                                <Button type="warning" onClick={this.showModal}>로그인하고 주문하기</Button>
                                                     <Modal
                                                     title="로 그 인"
                                                     visible={this.state.visible}

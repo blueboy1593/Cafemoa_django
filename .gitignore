@@ -223,7 +223,6 @@ $RECYCLE.BIN/
 # http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
 .Python
 pyvenv.cfg
-.env
 .venv
 env/
 venv/
@@ -298,7 +297,6 @@ typings/
 .yarn-integrity
 
 # dotenv environment variables file
-.env
 .env.test
 
 # parcel-bundler cache (https://parceljs.org/)

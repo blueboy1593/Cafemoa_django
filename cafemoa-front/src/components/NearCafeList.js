@@ -5,7 +5,6 @@ import {
     Divider,
     List,
     Card,
-    Rate,
 } from 'antd';
 import 'antd/dist/antd.css';
 import { Link } from "react-router-dom";
@@ -70,7 +69,7 @@ class NearCafeList extends React.Component {
                         itemLayout="vertical"
                         size="large"
                         pagination={{
-                            pageSize: 6
+                            pageSize: 3
                         }}
                         grid={{ gutter: 36, column: 1 }}
                         dataSource={cafeList}
@@ -82,20 +81,26 @@ class NearCafeList extends React.Component {
                             }}>
                             <List.Item
                                 key={cafe.ccid}>
-                                <div style={{ width: '100%', height: '150px', textAlign: 'center', backgroundColor: 'white' }}>
+                                {/* <div style={{ width: '100%', height: '150px', textAlign: 'center', backgroundColor: 'white' }}>
                                     <img src={cafe.cpic} style={{  width: '130px', height: '130px', margin: '10px' }}/>
                                     <div>{cafe.cname}</div>
                                     나와의 거리 : {cafe.distance} m
-                                </div>
-                                {/* <Card 
-                                style={{ display: 'flex', width: '180px', textAlign: 'center', padding: '0', height: '200px' }}
+                                </div> */}
+                                 <Card 
+                                style={{ display: 'flex', width: '100%', textAlign: 'center', padding: '0',  }}
                                 >
-                                    <img src={cafe.cpic} style={{  width: '100%', height: '150px' }}/>
+                                    <Row>
+                                        <Col span={12}>
+                                        <img src={cafe.cpic} alt={cafe.cname} style={{  width: '100%', height: '100px' }}/>
+                                    </Col>
+                                    <Col span={12}>
                                     <List.Item.Meta
                                         title={cafe.cname}
-                                        content={cafe.distance}
                                     />
-                                </Card> */}
+                                    {cafe.distance} m
+                                    </Col>
+                                    </Row>
+                                </Card> 
                             </List.Item>
                             {/* <List.Item
                                 key={cafe.ccid}>

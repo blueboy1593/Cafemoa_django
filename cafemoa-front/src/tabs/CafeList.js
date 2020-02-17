@@ -55,9 +55,9 @@ class CafeList extends React.Component {
                     <Row>
                         <Col span={4} />
                         <Col span={16} >
-                            <Search
+                            <Search 
                                 placeholder="카페명으로 검색"
-                                enterButton="검색"
+                               
                                 size="large"
                                 onSearch={value => this.handleSearch(value)}
                             />

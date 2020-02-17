@@ -18,7 +18,7 @@ export default class MenuModal extends Component {
               };
 
     showModal = () => {
-        console.log(this.state)
+        // console.log(this.state)
         this.setState({
             visible: true
             

@@ -52,7 +52,6 @@ export default createStore(function(state, action){
             ]
         }
     }
-    console.log(state.basket)
     return state;
 }, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )

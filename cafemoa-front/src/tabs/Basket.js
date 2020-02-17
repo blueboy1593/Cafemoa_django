@@ -17,15 +17,29 @@ class Basket extends React.Component {
         const basket = store.getState().basket
         console.log(basket)
         this.setState({
-            basket: basket,
+            menus: basket.menus,
         });
     }
 
+    handleClick(key, data){
+        console.log(key)
+        console.log(data)
+        const new_data = data.filter(menu => {
+            if (menu.key !== key) {
+                return menu
+            }
+            return null;
+        })
+        this.setState({
+            menus: new_data
+        })
+    }
+
     render() {
-        if (this.state.basket === undefined) {
+        if (this.state.menus === undefined) {
             return null;
         }
-        const data = this.state.basket.menus;
+        const data = this.state.menus;
         
         var price = 0;
         data.map(menu => {
@@ -33,6 +47,7 @@ class Basket extends React.Component {
             price = price + temp
             return null;
         })
+        console.log(data)
         console.log(price)
         const columns = [
             {
@@ -61,9 +76,9 @@ class Basket extends React.Component {
             },
             {
                 title: '삭제',
-                dataIndex: 'deleteCheck',
-                key: 'deleteCheck',
-                render: mmid => <Badge pill variant="danger">삭제</Badge> // 여기에 onClick 추가 하셈~!
+                dataIndex: 'key',
+                key: 'key',
+                render: key => <Badge pill variant="danger" onClick={() => this.handleClick(key, data)}>삭제</Badge> // 여기에 onClick 추가 하셈~!
             }
         ];
 
