@@ -22,14 +22,13 @@ class Basket extends React.Component {
     }
 
     handleClick(key, data){
-        console.log(key)
-        console.log(data)
         const new_data = data.filter(menu => {
             if (menu.key !== key) {
                 return menu
             }
             return null;
         })
+        store.dispatch({type:'BASKET_DELETE',menus:new_data}) 
         this.setState({
             menus: new_data
         })
@@ -47,8 +46,6 @@ class Basket extends React.Component {
             price = price + temp
             return null;
         })
-        console.log(data)
-        console.log(price)
         const columns = [
             {
                 title: '메뉴 사진',
@@ -81,35 +78,6 @@ class Basket extends React.Component {
                 render: key => <Badge pill variant="danger" onClick={() => this.handleClick(key, data)}>삭제</Badge> // 여기에 onClick 추가 하셈~!
             }
         ];
-
-
-        // 더미 데이터
-        // const data = [
-        //     {
-        //         key: '1',
-        //         mpic: "https://image.istarbucks.co.kr/upload/store/skuimg/2015/08/[110563]_20150813222100303.jpg",
-        //         mname: 'John Brown',
-        //         mquantity: 1,
-        //         mprice: 4000,
-        //         moption: '샷 추가',
-        //     },
-        //     {
-        //         key: '2',
-        //         mpic: "https://image.istarbucks.co.kr/upload/store/skuimg/2015/08/[110563]_20150813222100303.jpg",
-        //         mname: 'John Brown',
-        //         mquantity: 2,
-        //         mprice: 3000,
-        //         moption: '없음',
-        //     },
-        //     {
-        //         key: '3',
-        //         mpic: "https://image.istarbucks.co.kr/upload/store/skuimg/2015/08/[110563]_20150813222100303.jpg",
-        //         mname: 'John Brown',
-        //         mquantity: 3,
-        //         mprice: 2500,
-        //         moption: '휘핑 추가',
-        //     },
-        // ];
 
         return (
             <Row>
