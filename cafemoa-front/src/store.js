@@ -41,11 +41,6 @@ export default createStore(function(state, action){
                 menus:[action.data.menu]
             }
         } else {
-            // console.log(action.data.menu)
-            // const arr = state.basket.menus
-            // console.log(arr)
-            // arr.push(action.data.menu)
-            // 수많은 시행착오의 결과...ㅎ
             state.basket.menus = [
                 ...state.basket.menus,
                 action.data.menu
@@ -54,6 +49,10 @@ export default createStore(function(state, action){
     }
     if (action.type === 'BASKET_DELETE') {
         state.basket.menus = action.menus
+    }
+
+    if (action.type === 'BASKET_CLEAR') {
+        state.basket = undefined;
     }
 
     return state;

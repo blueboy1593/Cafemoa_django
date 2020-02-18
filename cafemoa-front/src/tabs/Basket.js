@@ -50,6 +50,7 @@ class Basket extends React.Component {
                 console.log('error')
                 console.error(error)
             })
+        store.dispatch({type:'BASKET_CLEAR'})
     };
 
     componentDidMount(){

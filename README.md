@@ -108,7 +108,7 @@
 }
 {
   "mname": "카페라떼",
-  "mpic": "https://snaptime.edaily.co.kr/wp-content/uploads/2019/07/tyle-hws-01-1562802184-700x700.png",
+  "mpic": "https://t1.daumcdn.net/cfile/tistory/11509E4D4F7316E919",
   "mprice": "3800",
   "mtype": "coffee"
 }
@@ -116,6 +116,24 @@
   "mname": "콜드브루",
   "mpic": "https://cdn.imweb.me/upload/S201904245cbfeaeb57b7d/54ea871a45350.jpg",
   "mprice": "5000",
+  "mtype": "coffee"
+}
+{
+  "mname": "카푸치노",
+  "mpic": "https://t1.daumcdn.net/cfile/tistory/2322A946518850AE0F",
+  "mprice": "3500",
+  "mtype": "coffee"
+}
+{
+  "mname": "카페모카",
+  "mpic": "https://img.danawa.com/prod_img/500000/685/781/img/4781685_1.jpg?shrink=500:500&_v=20161223091445",
+  "mprice": "4000",
+  "mtype": "coffee"
+}
+{
+  "mname": "카라멜마끼야또",
+  "mpic": "https://lh3.googleusercontent.com/proxy/thFyomYswtuEWJ4n2y_W6gEwf_rlYwWbm_EeF1MykTSLegsoy_n89bOO_mY4hY8vAomjvjLOndZ0dcgA14WZsOs7IVlL5M9Z4lQCMnP7F6jSX7MOJ2Xut0GPN6epfjyR-YBdIgFxscXqKAicuZoffRG_tKMh20aMRSXui7fNJmWKVSrMKHCWwqtrl1REvL6kl7jwrtC5LPxjQbxKp-MN1wIbEtkjhRmz6P1wZG1o_pKkVlvfS-hqT81kWUXEb-BFYrL2zaz3cQ6YETva4InFgcpuvGJTn_pR4uzOCOp8ZJnkT3KTaROYLF4bE4w67T3XwsHNBM-rVMJU6w",
+  "mprice": "4500",
   "mtype": "coffee"
 }
 
@@ -128,13 +146,31 @@
 }
 {
   "mname": "자몽에이드",
-  "mpic": "https://lh3.googleusercontent.com/proxy/mJz4wHPtCuouWB7LLoLsulNU39fBbIU9zmkhUifEiYtrWmZmEkm3DzZWZ8P9H6GETt135zc5A8QPgWQELETI6d-mbCwHX7yc-HsulCtVyH8XTT27",
+  "mpic": "https://www.gift24.tv/upfiles/product/c0269645.jpg",
   "mprice": "5200",
   "mtype": "juice"
 }
 {
   "mname": "딸기 스무디",
   "mpic": "https://www.paris.co.kr/data/product-old/[2]%EB%94%B8%EA%B8%B0.JPG",
+  "mprice": "5500",
+  "mtype": "juice"
+}
+{
+  "mname": "레몬에이드",
+  "mpic": "https://image.aladin.co.kr/product/8883/77/cover500/s502635127_1.jpg",
+  "mprice": "4500",
+  "mtype": "juice"
+}
+{
+  "mname": "플레인 요거트 스무디",
+  "mpic": "https://lh3.googleusercontent.com/proxy/1HzBMg00-X9Op7MDWqJBMcWHkVXbpApYRSL64h1R_fEmRDJ23E3HAJ6gppEPSiQECTandfSZNwhpTnmGdj1Ep1NQ6zOo12NuKYcE0atWRIU1sQza",
+  "mprice": "5000",
+  "mtype": "juice"
+}
+{
+  "mname": "블루베리에이드",
+  "mpic": "https://www.dechocolatecoffeeand.co.kr/home2015/and/img/img_menu_and_ade_blueberryade.png",
   "mprice": "5500",
   "mtype": "juice"
 }
@@ -148,7 +184,7 @@
 }
 {
   "mname": "얼그레이",
-  "mpic": "https://www.twosome.co.kr:7009/Twosome_file/PRODUCT/2207_big_img",
+  "mpic": "https://lh3.googleusercontent.com/proxy/_9njFSjANp3kKb2f4jQV-fHM78Ji_pU2ImW0vGqRr0yWFy1H-M7dBkVLcbykx1bGF5zM3DiH7hQU-W8axEmff8wz6aKfCK96AfU3lKkt8EMYvEpn6iq_JgyFuDN1OWZkNhHuXN-WUoZHSlI5ENOv6HSKGcCzb55z684bmjxDtNo0Rdz9u39tSf6SceXp-2KqqK4adKdl6ZDwuOwutb0JDqv8xUhPZ7IL-9_zN6NHYPh-Ty2ihvdhqO4hmkLMDpiXulqbimSkPUJQHX6vK5QpZabCE9Ot7Eiee0Q__zY_xe0C0QhSrkak",
   "mprice": "4500",
   "mtype": "tea"
 }
@@ -160,7 +196,7 @@
 }
 {
   "mname": "블랙티",
-  "mpic": "https://www.twosome.co.kr:7009/Twosome_file/PRODUCT/2211_big_img",
+  "mpic": "https://5.imimg.com/data5/KB/KI/LZ/SELLER-81627793/orthodox-black-tea-500x500.JPG",
   "mprice": "5000",
   "mtype": "tea"
 }
@@ -178,6 +214,23 @@
   "mprice": "9000",
   "mtype": "dessert"
 }
-
+{
+  "mname": "초코 쿠키",
+  "mpic": "https://recipe1.ezmember.co.kr/cache/recipe/2016/02/06/8c11234ff389c3bccb733d9f298d7d271.jpg",
+  "mprice": "2000",
+  "mtype": "dessert"
+}
+{
+  "mname": "치즈 케이크",
+  "mpic": "https://recipe1.ezmember.co.kr/cache/recipe/2015/04/22/bbf5b3999654ad63b140c24bd80a21f21.jpg",
+  "mprice": "4500",
+  "mtype": "dessert"
+}
+{
+  "mname": "초코 케이크",
+  "mpic": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR6p_4-CMdUt-OcvmkJhqHlu-DdFV1AnedUtshuA-W0SZo0M6kx",
+  "mprice": "3500",
+  "mtype": "dessert"
+}
 ```
 

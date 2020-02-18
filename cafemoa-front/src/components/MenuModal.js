@@ -83,8 +83,8 @@ export default class MenuModal extends Component {
         // console.log(menu)
         return (
             <div>
-                <Card style={{  width: '90%', textAlign: 'center', padding: '5%', height: "250px" }} onClick={this.showModal} >
-                    <div style={{ width: '100%', height: "150px" }}>
+                <Card style={{  width: '90%', textAlign: 'center', padding: '5%', height: "200px" }} onClick={this.showModal} >
+                    <div style={{ width: '100%', height: "130px" }}>
                         <Card.Img variant="top" src={menu.mpic} alt={menu.mname} title={menu.mmid} style={{ width: '100%', height: "auto" }} />
                     </div>
                     <Card.Body style={{  padding: '10%' }}>

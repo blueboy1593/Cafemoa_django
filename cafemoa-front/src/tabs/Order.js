@@ -36,6 +36,7 @@ class Order extends React.Component {
         if (this.state.menulist === undefined) {
             return null;
         }
+        const ccid = this.props.location.ccid
         const menulist = this.state.menulist
         const coffelist = menulist.filter(menu => {
             if (menu.mtype === "coffee") {
@@ -137,7 +138,9 @@ class Order extends React.Component {
                   
                     <br />
                     <div style={{ textAlign: 'center' }}>
+                        <Link to={`/latte/cafedetail/${ccid}`}>
                         <Button className="subBtn">뒤로</Button>{'   '}
+                        </Link>
                         <Link to='/latte/basket'>
                         <Button className="mainBtn">장바구니</Button>
                         </Link>
