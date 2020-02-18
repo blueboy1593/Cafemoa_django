@@ -40,6 +40,7 @@ class Basket extends React.Component {
             oprice: price,
             content: content
         }
+        console.log(order_data)
         const base_url = process.env.REACT_APP_SERVER_IP
         axios.post(base_url + '/cafes/order/', order_data)
             .then(response => {
