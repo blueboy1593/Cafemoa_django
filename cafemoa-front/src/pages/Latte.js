@@ -3,6 +3,8 @@ import { Route } from 'react-router-dom';
 import { Main, CafeList, Login, Signup, NearCafe, CafeDetail, Order, Mypage, Basket } from '../tabs';
 // import LatteNavbar from '../headers/LatteNavbar';
 import Logout from '../components/Logout';
+import { KaKao, Naver } from '../components/index';
+
 
 class Latte extends Component{
     render(){
@@ -19,6 +21,9 @@ class Latte extends Component{
           <Route path='/latte/logout' component={Logout}/>
           <Route path='/latte/mypage' component={Mypage}/>
           <Route path='/latte/basket' component={Basket}/>
+
+          <Route path="/latte/kakao" component={KaKao} />
+          <Route path="/latte/naver" component={Naver} />
         </div>
       );
     }

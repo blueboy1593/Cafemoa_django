@@ -44,14 +44,17 @@ class SignUpForm extends React.Component {
               axios.post(base_url + '/accounts/signup/', user_data)
               .then(response => {
                   console.log('회원가입')
+                  
                   // 바로 로그인하자.
-                  store.dispatch({type:'LOGIN', user_data:user_data})
+                  const login_data = response.data
+                  console.log(login_data)
+                  store.dispatch({type:'LOGIN', user_data:login_data})
                   localStorage.setItem(
                       "user_data",
-                      JSON.stringify(user_data)
+                      JSON.stringify(login_data)
                   );
                   this.props.history.push('/');
-                  console.log(response)
+                  
               })
               .catch(error => {
                   console.log('error')

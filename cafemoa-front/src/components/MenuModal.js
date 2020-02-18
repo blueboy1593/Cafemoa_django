@@ -36,7 +36,7 @@ export default class MenuModal extends Component {
         });
         const uid = store.getState().user_info.uid
         const basket = store.getState().basket
-
+        console.log('uid', uid)
         if (basket === undefined) {
             store.dispatch({type:'BASKET', 
             data: {
