@@ -124,19 +124,19 @@
   "mname": "오렌지주스",
   "mpic": "https://sc01.alicdn.com/kf/HTB1WPBcklDH8KJjy1zeq6xjepXav/Fruit-juice-production-line-juice-filling-machine.jpg_350x350.jpg",
   "mprice": "3000",
-  "mtype": "JUICE"
+  "mtype": "juice"
 }
 {
   "mname": "자몽에이드",
   "mpic": "https://lh3.googleusercontent.com/proxy/mJz4wHPtCuouWB7LLoLsulNU39fBbIU9zmkhUifEiYtrWmZmEkm3DzZWZ8P9H6GETt135zc5A8QPgWQELETI6d-mbCwHX7yc-HsulCtVyH8XTT27",
   "mprice": "5200",
-  "mtype": "JUICE"
+  "mtype": "juice"
 }
 {
   "mname": "딸기 스무디",
   "mpic": "https://www.paris.co.kr/data/product-old/[2]%EB%94%B8%EA%B8%B0.JPG",
   "mprice": "5500",
-  "mtype": "JUICE"
+  "mtype": "juice"
 }
 
 # tea
