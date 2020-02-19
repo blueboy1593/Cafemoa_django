@@ -25,9 +25,7 @@ sample id 와 password
   "uphone": "01011112222",
   "upic": "없어"
 },
-
 eyJ0eXBlIjoiSldUIiwicmVnRGF0ZSI6MTU4MTA1MDE5ODEzNSwiYWxnIjoiSFMyNTYifQ.eyJtZW1iZXIiOnsidWlkIjoia2FuZ2h5dW4iLCJ1bmFtZSI6Iuq5gOqwle2YhCIsInVwaG9uZSI6IjAxMDExMTEyMjIyIiwidWVtYWlsIjoia2FuZ2h5dW5AbmF2ZXIuY29tIiwidW5pY2tuYW1lIjoia2FuZ2h5dW4iLCJyb2xlIjoiSE9TVCIsInVwaWMiOiLsl4bslrQifX0.AK8zBBxOWnnjvai02JaQiMGMP11gh5BSI4RtK6fE1YA
-
 
 {
   "role": "GUEST",
@@ -56,7 +54,9 @@ eyJ0eXBlIjoiSldUIiwicmVnRGF0ZSI6MTU4MDc5OTU1Njk2NSwiYWxnIjoiSFMyNTYifQ.eyJtZW1iZ
   "cname": "Hollys",
   "copen": "0900",
   "cphone": "0212451153",
-  "cpic": "https://img.tf.co.kr/article/home/2012/12/24/121224_50d7ab07a9b03.jpg"
+  "cpic": "https://img.tf.co.kr/article/home/2012/12/24/121224_50d7ab07a9b03.jpg",
+  "latitude": "37.501130",
+  "longitude": "127.039131"
 }
 {
   "cclose": "2200",
