@@ -47,7 +47,7 @@ class CafeDetail extends React.Component {
         const base_url = process.env.REACT_APP_SERVER_IP
         // const ccid = this.props.location.cafe.ccid
         const ccid = this.props.match.params.value
-        axios.get(base_url + `/cafes/${ccid}/`)
+        axios.get(base_url + `/cafe/${ccid}/`)
             .then(response =>{
             console.log(response)
             this.setState({

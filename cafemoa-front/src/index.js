@@ -12,6 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import BasketStore from "./BasketStore";
 import "./styles.css";
 
+
 ReactDOM.render(
     // 이 프로바이더를 통해서 store를 일일히 import할 필요가 없어지는 것. Magic이래....;;
     // App을 provider로 감쌈으로서 App 내에 있는 모든 component에서 store에 접근할 수 있을 것.

@@ -14,6 +14,7 @@ export default createStore(function(state, action){
         else return {
             user_info:  {
                 role: 'VISITOR',
+                uuid: '',
                 uid: '',
                 uname: '',
                 uphone: '',
@@ -35,6 +36,7 @@ export default createStore(function(state, action){
     if (action.type === 'LOGOUT'){
         state.user_info = {
             role: 'VISITOR',
+            uuid: '',
             uid: '',
             uname: '',
             uphone: '',
@@ -48,7 +50,7 @@ export default createStore(function(state, action){
         if (state.basket === undefined) {
             state.basket = {
                 ccid:action.data.ccid,
-                uid:action.data.uid,
+                uuid:action.data.uuid,
                 menus:[action.data.menu]
             }
         } else {
@@ -64,6 +66,14 @@ export default createStore(function(state, action){
 
     if (action.type === 'BASKET_CLEAR') {
         state.basket = undefined;
+    }
+
+    if (action.type === 'pos') {
+        const crd = action.crd
+        state.pos = {
+            latitude: crd.latitude,
+            longitude: crd.longitude
+        }
     }
 
     return state;

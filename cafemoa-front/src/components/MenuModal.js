@@ -34,41 +34,22 @@ export default class MenuModal extends Component {
         this.setState({
             visible: false,
         });
-        const uid = store.getState().user_info.uid
-        const basket = store.getState().basket
-        console.log('uid', uid)
-        if (basket === undefined) {
-            store.dispatch({type:'BASKET', 
-            data: {
-                ccid: menu.cafe,
-                uid: uid,
-                menu: {
-                    key:menu.mmid,
-                    mname:menu.mname,
-                    mpic:menu.mpic,
-                    mprice:menu.mprice,
-                    mquantity:this.state.value
-                }
-            }
-        })    
-        }
-        else {
-            // 다음에 하자 이 기능은.... ㅎ
-            store.dispatch({type:'BASKET', 
-            data: {
-                ccid: menu.cafe,
-                uid: uid,
-                menu: {
-                    key:menu.mmid,
-                    mname:menu.mname,
-                    mpic:menu.mpic,
-                    mprice:menu.mprice,
-                    mquantity:this.state.value
-                }
-            }
-        })
-        }
+        const uuid = store.getState().user_info.uuid
+        // const basket = store.getState().basket
         
+        store.dispatch({type:'BASKET', 
+        data: {
+            ccid: menu.ccid,
+            uuid: uuid,
+            menu: {
+                key:menu.mmid,
+                mname:menu.mname,
+                mpic:menu.mpic,
+                mprice:menu.mprice,
+                mquantity:this.state.value
+            }
+        }
+        })
     };
 
     handleCancel = e => {

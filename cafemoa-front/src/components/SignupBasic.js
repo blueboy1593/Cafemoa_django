@@ -114,6 +114,12 @@ class SignUp extends React.Component {
         this.setState({ confirmDirty: this.state.confirmDirty || !!value });
     };
 
+    // idcheck = () => {
+    //     console.log(this.state)
+    //     console.log(this.props)
+
+        // <Alert message="Success Text" type="success" style={{ padding:'0', margin:'0' }}/>
+    // }
 
     compareToFirstPassword = (rule, value, callback) => {
         const { form } = this.props;
@@ -203,7 +209,7 @@ class SignUp extends React.Component {
                     <Form {...formItemLayout} onSubmit={this.handleSubmit}>
                         <Form.Item label="아이디">
                             <Row gutter={8}>
-                                <Col span={20}>
+                                <Col span={24}>
                                     {getFieldDecorator('uid', {
                                         rules: [
                                             {
@@ -213,14 +219,14 @@ class SignUp extends React.Component {
                                         ],
                                     })(<Input />)}
                                 </Col>
-                                <Col span={4}>
-                                    <Button>중복확인</Button>
-                                </Col>
+                                {/* <Col span={4}>
+                                    <Button onClick={this.idcheck}>중복확인</Button>
+                                </Col> */}
                             </Row>
                         </Form.Item>
                         <Form.Item label="비밀번호" hasFeedback>
                             <Row gutter={8}>
-                                <Col span={20}>
+                                <Col span={24}>
                                     {getFieldDecorator('upass', {
                                         rules: [
                                             {
@@ -238,7 +244,7 @@ class SignUp extends React.Component {
                         </Form.Item>
                         <Form.Item label="비밀번호 확인" hasFeedback>
                             <Row gutter={8}>
-                                <Col span={20}>
+                                <Col span={24}>
                                     {getFieldDecorator('upassConfirm', {
                                         rules: [
                                             {
@@ -257,7 +263,7 @@ class SignUp extends React.Component {
 
                         <Form.Item label="이름">
                             <Row gutter={8}>
-                                <Col span={20}>
+                                <Col span={24}>
                                     {getFieldDecorator('uname', {
                                         rules: [
                                             { 
@@ -273,7 +279,7 @@ class SignUp extends React.Component {
 
                         <Form.Item label="이메일">
                             <Row gutter={8}>
-                                <Col span={20}>
+                                <Col span={24}>
                                     {getFieldDecorator('uemail', {
                                         rules: [
                                             {
@@ -287,15 +293,15 @@ class SignUp extends React.Component {
                                         ],
                                     })(<Input />)}
                                 </Col>
-                                <Col span={4}>
+                                {/* <Col span={4}>
                                     <Button>중복확인</Button>
-                                </Col>
+                                </Col> */}
                             </Row>
                         </Form.Item>
 
                         <Form.Item label="핸드폰 번호">
                             <Row gutter={8}>
-                                <Col span={20}>
+                                <Col span={24}>
                                     {getFieldDecorator('uphone', {
                                         rules: [{ required: true, message: '핸드폰 번호를 입력해 주세요!' }],
                                     })(<Input />)}

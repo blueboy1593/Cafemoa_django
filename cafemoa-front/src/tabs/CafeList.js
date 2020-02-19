@@ -20,7 +20,7 @@ class CafeList extends React.Component {
     
     componentDidMount(){
         const base_url = process.env.REACT_APP_SERVER_IP
-        axios.get(base_url + '/cafes')
+        axios.get(base_url + '/cafe/all')
             .then(response =>{
             this.setState({
                 cafeList: response.data
