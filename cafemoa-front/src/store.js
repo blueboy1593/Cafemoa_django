@@ -1,26 +1,34 @@
 import {createStore} from 'redux';
+import jwtDecode from 'jwt-decode';
 
 export default createStore(function(state, action){
     if(state === undefined){
-        const user_data = localStorage.getItem("user_data")
-        const user_info = JSON.parse(user_data)
-        if(user_data){
+        const token = localStorage.getItem("login_token")
+        if(token){
+            const decoded_token = jwtDecode(token)
+            const info = decoded_token.member
             return {
-                user_info:user_info
+                user_info:info
             }
         }
         else return {
             user_info:  {
                 role: 'VISITOR',
                 uid: '',
-                username: '',
+                uname: '',
+                uphone: '',
+                uemail: '',
                 unickname: '',
+                upic: '',
             }
         }
     }
     
+    // 로그인 요청으로 들어왔을때, action에는 axios로 따온 token이 들어있을 것이고, 이를 디코드해서 사용할 것이다!!
     if (action.type === 'LOGIN'){
-        const user_info = action.user_data
+        const token = action.token
+        const decoded_token = jwtDecode(token)
+        const user_info = decoded_token.member
         state.user_info = user_info
     }
 
@@ -28,8 +36,11 @@ export default createStore(function(state, action){
         state.user_info = {
             role: 'VISITOR',
             uid: '',
-            username: '',
+            uname: '',
+            uphone: '',
+            uemail: '',
             unickname: '',
+            upic: '',
         }
     }
 

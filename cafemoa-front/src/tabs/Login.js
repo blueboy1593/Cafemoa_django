@@ -3,7 +3,6 @@ import store from '../store';
 import { withRouter , Link } from 'react-router-dom';
 import axios from 'axios';
 import {Form, Input, Icon, Button } from 'antd';
-import jwtDecode from 'jwt-decode';
 
 
 class Login extends Component{
@@ -21,32 +20,24 @@ class Login extends Component{
         e.preventDefault();
       
         const params = {
-            username: this.state.id,
-            password: this.state.pass
+            uid: this.state.id,
+            upass: this.state.pass
         }
  
         const base_url = process.env.REACT_APP_SERVER_IP
-        axios.post(base_url + '/login/', params)
+        axios.post(base_url + '/user/signin', params)
         .then(response => {
             console.log('로그인 요청')
-            // store.dispatch({type:'LOGIN', token:response.data.token})
-            console.log(response.data.token)
-            const decoded_token = jwtDecode(response.data.token)
-            const user_id = decoded_token.user_id
-            axios.get(base_url + `/accounts/${user_id}`)
-            .then(response => {
-                const user_data = response.data
-                store.dispatch({type:'LOGIN', user_data:user_data})
-                localStorage.setItem(
-                    "user_data",
-                    JSON.stringify(user_data)
-                );
-                if (this.props.ccid) {
-                  this.props.history.push(`/latte/cafedetail/${this.props.ccid}`);
-                  return
-                }
-                this.props.history.push('/');
-            })
+            store.dispatch({type:'LOGIN', token:response.data.token})
+            localStorage.setItem(
+                "login_token",
+                JSON.stringify(response.data.token)
+            );
+            if (this.props.ccid) {
+                this.props.history.push(`/latte/cafedetail/${this.props.ccid}`);
+                return
+              }
+            this.props.history.push('/');
         })
         .catch(error => {
             console.log('error')
