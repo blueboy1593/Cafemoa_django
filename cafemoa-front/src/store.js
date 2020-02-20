@@ -30,6 +30,7 @@ export default createStore(function(state, action){
         const token = action.token
         const decoded_token = jwtDecode(token)
         const user_info = decoded_token.member
+        console.log(user_info)
         state.user_info = user_info
     }
 
