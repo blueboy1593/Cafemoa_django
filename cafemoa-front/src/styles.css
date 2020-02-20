@@ -41,40 +41,7 @@ button {
 
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR');
 *{ margin: 0; padding: 0; font-size: 12px; color: #282f39; font-family: 'Noto Sans KR', sans-serif; }
-/********************** header ***********************/
-.navbar{ display: block; width: 100%; float: left; position: top; z-index: 1; background-color: #f0853f;}
-.navbar-nav{ display: block; padding-bottom: 0;} 
 
-/* main_menu */
-.navbar .navbar-toggler { display: block; width: 20%; float: left; margin: 0; padding: 0; border: none; text-align: left; z-index: 500; }
-.navbar .navbar-toggler-icon{ width: 35px; height: 35px; background-image: url("./menuBtn_icon.png"); z-index: 5000;}
-.navbar .navbar-toggler-icon.on{ background-image: url("./menuBtn_icon_after.png"); z-index: 5000; }
-
-.navbar .navbar-collapse{ position: absolute; top: 0; left: 0; background-color: #fff; width: 32%; height: 900px; padding-top: 70px; padding-left: 35px; box-sizing: border-box; z-index: 20 !important; }
-
-.navbar .navbar-collapse *{ margin: 0; padding: 0; font-size: 14px; color: #f0853f; }
-
-/* menu_slideout */
-.menuBarItem{ width: 100px; height: 30px; text-align: left;}
-.menuBar_list{ width: 100px; height: 30px;}
-
-/* main_logo */
-.navbar .navbar-brand{ display: block; width: 60%; height: 40px; text-align: center; padding: 0; margin: 0; float: left; }
-.navbar .navbar-brand *{ margin: 0; }
-.navbar .navbar-brand a{ display: block; width: 100%; height: 35px; margin: 0 auto; text-align: center; }
-.navbar .main_logo{ width: 120px; height: 35px; text-align: center;}
-
-/* .navbar .main_menu{ display: block; width: 35px; height: 35px; text-align: left; }
-.navbar .Menu{ width: 40%; float: left; text-align: left; } */
-
-/* myPage */
-.navbar{ margin-bottom: 30px; }
-.navbar .main_mypage{ display: block; width: 35px; height: 35px; float: right; }
-.navbar .MyPage{ width: 20%; float: right; }
-.mypagelevels{ width: 100%; }
-.mypageicons { width: 33%; }
-.mypagelevel{ width: 70%; padding-bottom: 5%;}
-/********************** section **********************/
 
 /* .section1, .section2, .section3{ background-color: #fff; } */
 
@@ -82,9 +49,9 @@ button {
 .App { width: 100%; height: 100%; background-color: #f0853f; }
 .Latte{ width: 100%; height: 100%; background-color: #fff; }
 /* .ant-row { background-color: #f0853f; } */
-/* .Latte > div{ width: 100%; height: 100%; } */
+
 /* index page */
-.main_indexPage{ width: 100%; height: 100%; background-color: #f0853f; margin: 0 auto; background-image: url(./background_02.png); background-size: 120%; background-position: center; background-repeat: no-repeat;}
+.main_indexPage{ width: 100%; height: 100%; background-color: #f0853f; margin: 0 auto; background-image: url(./imgs/background_02.png); background-size: 120%; background-position: center; background-repeat: no-repeat;}
 
 
 /*  */

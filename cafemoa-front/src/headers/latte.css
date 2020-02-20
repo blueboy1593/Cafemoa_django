@@ -1,0 +1,38 @@
+/********************** header ***********************/
+.latte{ display: block; width: 100%; float: left; position: top; z-index: 1; background-color: #f0853f; margin-bottom: 30px;}
+.latte-nav{ display: block; padding-bottom: 0;} 
+
+/* main_menu */
+.latte .navbar-toggler { display: block; width: 20%; float: left; margin: 0; padding: 0; border: none; text-align: left; z-index: 500; }
+.navbar-toggler-icon{ width: 35px; height: 35px; background-image: url("../imgs/menuBtn_icon.png"); z-index: 5000;}
+.navbar-toggler-icon.on{ background-image: url("../imgs/menuBtn_icon_after.png"); z-index: 5000; }
+
+.latte .navbar-collapse{ position: absolute; top: 0; left: 0; background-color: #fff; width: 32%; height: 900px; padding-top: 70px; padding-left: 35px; box-sizing: border-box; z-index: 20 !important; }
+
+.latte .navbar-collapse *{ margin: 0; padding: 0; font-size: 14px; color: #f0853f; }
+
+/* menu_slideout */
+.menuBarItem{ width: 100px; height: 30px; text-align: left;}
+.menuBar_list{ width: 100px; height: 30px;}
+
+/* main_logo */
+.latte .navbar-brand{ display: block; width: 60%; height: 40px; text-align: center; padding: 0; margin: 0; float: left; }
+.latte .navbar-brand *{ margin: 0; }
+.latte .navbar-brand a{ display: block; width: 100%; height: 35px; margin: 0 auto; text-align: center; }
+.navbar .main_logo{ width: 120px; height: 35px; text-align: center;}
+
+/* .navbar .main_menu{ display: block; width: 35px; height: 35px; text-align: left; }
+.navbar .Menu{ width: 40%; float: left; text-align: left; } */
+
+/* myPage */
+.navbar .main_mypage{ display: block; width: 35px; height: 35px; float: right; }
+.navbar .MyPage{ width: 20%; float: right; }
+.mypagelevels{ width: 100%; }
+.mypageicons { width: 33%; }
+.mypagelevel{ width: 70%; padding-bottom: 5%;}
+/********************** section **********************/
+
+
+/* PC 버전에서의 CSS */
+.menuBarItemPC{ width: 100px; height: 30px; text-align: left;}
+.menuBar_listPC{ width: 100px; height: 30px; color: white; font-size: 16px;}
