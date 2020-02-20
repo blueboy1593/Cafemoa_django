@@ -13,6 +13,7 @@ class App extends Component{
       return (
         <div className="App">
           <Route exact path='/' component={FullpageWrapper}/>
+          <Route path='/' component={Latte}/>
         </div>
       )
     } else {

@@ -42,10 +42,9 @@ export default class LatteNavbar extends Component {
               (function() {
                 if (role === 'HOST') return (
                   <>
-                    <Link to='/latte/registercafe' className="menuBarItem"><p className="menuBar_list">카페정보</p></Link>
-                    <Link to='/latte/registermenu' className="menuBarItem"><p className="menuBar_list">메뉴등록</p></Link>
-                    <Link to='/latte/registermenu' className="menuBarItem"><p className="menuBar_list">메뉴관리</p></Link>
-                    <Link to='/latte/registermenu' className="menuBarItem"><p className="menuBar_list">내카페관리</p></Link>
+                    <Link to='/latte' className="menuBarItem"><p className="menuBar_list">카페정보</p></Link>
+                    <Link to='/latte/mycafeorder' className="menuBarItem"><p className="menuBar_list">주문관리</p></Link>
+                    <Link to='/latte/mycafemanage' className="menuBarItem"><p className="menuBar_list">내카페관리</p></Link>
                   </>
                 );
                 else if (role === 'GUEST') return (

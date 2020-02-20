@@ -1,8 +1,8 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactFullpage from "@fullpage/react-fullpage";
-// import LatteNavbar from "../headers/LatteNavbar";
-import LatteNavbarPC from "../headers/LatteNavbarPC";
+import LatteNavbar from "../headers/LatteNavbar";
+// import LatteNavbarPC from "../headers/LatteNavbarPC";
 
 const FullpageWrapper = () => {
   // render() {
@@ -11,7 +11,7 @@ const FullpageWrapper = () => {
           <>
               <div className="top-fixed">
                 {/* 로그인 하지 않은 상태에서의 헤더 나타내기 */}
-                <LatteNavbarPC></LatteNavbarPC>
+                <LatteNavbar></LatteNavbar>
               </div>
               <ReactFullpage
                   navigation
