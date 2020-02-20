@@ -5,9 +5,9 @@ import store from '../store';
 
 export default class Mypage extends Component {
     componentDidMount(){
-        const uid = store.getState().user_info.uid
+        const uuid = store.getState().user_info.uuid
         const base_url = process.env.REACT_APP_SERVER_IP
-        axios.get(base_url + `/cafes/getuserorder/${uid}`)
+        axios.get(base_url + `/cafes/getuserorder/${uuid}`)
             .then(response => {
                 this.setState({
                     orderrecord:response.data.length

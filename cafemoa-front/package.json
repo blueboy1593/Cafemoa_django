@@ -2,7 +2,6 @@
   "name": "login-token-router",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://i02a301.p.ssafy.io:8080",
   "dependencies": {
     "@fullpage/react-fullpage": "^0.1.17",
     "@material-ui/core": "^4.9.1",

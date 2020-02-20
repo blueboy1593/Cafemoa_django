@@ -9,7 +9,7 @@ import {
 import 'antd/dist/antd.css';
 import { Badge } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import PCNavbar from '../headers/PCNavbar';
 
 const { TabPane } = Tabs;
 class MyCafeOrder extends React.Component {
@@ -180,6 +180,8 @@ class MyCafeOrder extends React.Component {
         ];
 
         return (
+            <>
+            <PCNavbar></PCNavbar>
             <Row>
                 <Col span={1} />
                 <Col span={22}>
@@ -197,6 +199,7 @@ class MyCafeOrder extends React.Component {
                 </Col>
                 <Col span={1} />
             </Row>
+            </>
         );
     }
 }

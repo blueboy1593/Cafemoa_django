@@ -34,5 +34,6 @@
 
 
 /* PC 버전에서의 CSS */
+.PC { display: block; width: 100%; float: left; position: top; z-index: 1; background-color: #f0853f; margin-bottom: 30px;}
 .menuBarItemPC{ width: 100px; height: 30px; text-align: left;}
 .menuBar_listPC{ width: 100px; height: 30px; color: white; font-size: 16px;}

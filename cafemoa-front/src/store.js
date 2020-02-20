@@ -1,5 +1,6 @@
 import {createStore} from 'redux';
 import jwtDecode from 'jwt-decode';
+// import axios from 'axios';
 
 export default createStore(function(state, action){
     if(state === undefined){
@@ -7,8 +8,26 @@ export default createStore(function(state, action){
         if(token){
             const decoded_token = jwtDecode(token)
             const info = decoded_token.member
+            // state.user_info = info
+            // if (info.role === 'HOST'){
+            //     console.log(token)
+            //     const ntoken = JSON.parse(token)
+            //     console.log(ntoken)
+            //     const headers = {
+            //         'Authorization': token
+            //     }
+            //     const base_url = process.env.REACT_APP_SERVER_IP
+            //     axios.post(base_url + '/cafe/searchMyCafe', {headers})
+            //     .then(response => {
+            //         console.log(response)
+            //     })
+            //     .catch(error => {
+            //         console.log('error')
+            //         console.error(error)
+            //     })
+            // }
             return {
-                user_info:info
+                user_info: info
             }
         }
         else return {

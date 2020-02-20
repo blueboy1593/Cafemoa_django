@@ -1,7 +1,7 @@
 
 
 # DB.README
-
+  // "proxy": "http://i02a301.p.ssafy.io:8080",
 sample id 와 password
 
 ```json
