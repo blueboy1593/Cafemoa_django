@@ -68,6 +68,7 @@ class MyCafe extends React.Component {
         e.preventDefault();
         this.props.form.validateFieldsAndScroll((err, values) => {
             if (!err) {
+                // const { resetFields } = this.props.form;
                 console.log(values)
                 console.log(pictures)
                 console.log(this)
@@ -86,6 +87,7 @@ class MyCafe extends React.Component {
                     ]
                 })
                 console.log(this.props.form)
+                this.props.form.resetFields()
             }
         })
         this.setState({
