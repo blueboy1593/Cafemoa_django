@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import queryString from "query-string";
 import LatteNavbar from '../headers/LatteNavbar';
+// import { Redirect } from 'react-router-dom';
+
 
 export default class KaKao extends Component {
   componentDidMount() {
@@ -13,7 +15,13 @@ export default class KaKao extends Component {
       .then(response => {
         console.log("post됐니??");
         console.log(response);
-        // history.push('/') // vue-router로 특정 페이지로 이동 즉 세션이 끝난 뒤에는 홈으로 보내겠다.
+        // return (
+        //   <div>
+        //     {
+        //       <Redirect to="/"/>
+        //     }
+        //   </div>
+        // )
       })
       .catch(error => {
         console.error(error);

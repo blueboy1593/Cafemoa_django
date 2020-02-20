@@ -32,6 +32,7 @@ export default class PCNavbar extends Component {
 
   render() {
     const role = store.getState().user_info.role
+    console.log(role)
     return (
       <div>
         <Navbar bg="fade" expand="lg" className="PC">
@@ -87,7 +88,7 @@ export default class PCNavbar extends Component {
                   
                     </Modal>
                   </div>
-                    <Link to='/latte/signup' className="menuBarItemPC"><p className="menuBar_list">회원가입</p></Link>
+                    <Link to='/latte/signup' className="menuBarItemPC"><p className="menuBar_listPC">회원가입</p></Link>
                   </>
                 );
               }).bind(this)()

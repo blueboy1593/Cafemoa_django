@@ -12,6 +12,7 @@ import {
 } from 'antd';
 import 'antd/dist/antd.css';
 import axios from 'axios';
+import PCNavbar from '../headers/PCNavbar';
 
 
 function getBase64(img, callback) {
@@ -133,6 +134,8 @@ class CafeReg extends React.Component {
         };
 
         return (
+            <>
+            <PCNavbar></PCNavbar>
             <Row>
                 <Col span={1} />
                 <Col span={22}>
@@ -249,6 +252,7 @@ class CafeReg extends React.Component {
                 </Col>
                 <Col span={1} />
             </Row>
+            </>
         );
     }
 }

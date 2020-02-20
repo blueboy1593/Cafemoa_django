@@ -14,6 +14,8 @@ import {
 import 'antd/dist/antd.css';
 import axios from 'axios';
 import store from '../store';
+import LatteNavbar from '../headers/LatteNavbar';
+import PCNavbar from '../headers/PCNavbar';
 
 
 function getBase64(img, callback) {
@@ -197,6 +199,14 @@ class SignUp extends React.Component {
         const { imageUrl } = this.state;
 
         return (
+            <>
+            {(function() {if (this.state.role === 'GUEST') {
+                return (<LatteNavbar></LatteNavbar>)
+            }
+            else {
+                return (<PCNavbar></PCNavbar>)
+            }
+            }).bind(this)()}
             <Row>
                 <Col span={1} />
                 <Col span={22}>
@@ -341,6 +351,7 @@ class SignUp extends React.Component {
                 </Col>
                 <Col span={1} />
             </Row>
+            </>
         );
     }
 }

@@ -66,7 +66,7 @@ class CafeList extends React.Component {
                         </Col>
                         <Col span={4} />
                     </Row>
-                    <Divider orientation="center"></Divider>
+                    <Divider orientation="center">영업중인 카페</Divider>
                     
                     <List
                         itemLayout="vertical"
@@ -90,7 +90,7 @@ class CafeList extends React.Component {
                                     <img
                                         alt={cafe.cname}
                                         src={cafe.cpic}
-                                        // style={{  width: '90%', textAlign: 'center', padding: '5%', height: "250px" }}
+                                        style={{  width: '100%', textAlign: 'center', height: "100px" }}
                                     />
                                 }>
                                     {/* <Card.Body style={{  padding: '10%' }}> */}

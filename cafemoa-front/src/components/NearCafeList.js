@@ -90,7 +90,7 @@ class NearCafeList extends React.Component {
                                     <List.Item.Meta style={{paddingTop:'10px'}}
                                         title={cafe.cname}
                                     />
-                                    {cafe.distance} m
+                                    나와의 거리: {cafe.distance} m
                                     </Col>
                                     </Row>
                                 </Card> 

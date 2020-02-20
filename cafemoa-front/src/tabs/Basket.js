@@ -35,7 +35,7 @@ class Basket extends React.Component {
         const ccid = this.state.ccid
         const uuid = this.state.uuid
         const order_data = {
-            userid: uuid,
+            uuid: uuid,
             ccid: ccid,
             oprice: price,
             ocontent: ocontent,
@@ -43,8 +43,9 @@ class Basket extends React.Component {
         }
         console.log(order_data)
         const token = localStorage.getItem("login_token")
+        const parsed = JSON.parse(token)
         const headers = {
-            'Authorization': token
+            'Authorization': parsed
         }
         console.log(headers)
         const base_url = process.env.REACT_APP_SERVER_IP
