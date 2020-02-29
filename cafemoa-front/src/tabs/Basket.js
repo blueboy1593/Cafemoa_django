@@ -31,18 +31,25 @@ class Basket extends React.Component {
     };
 
     handleOk = (price, data) => {
-        const content = `${data[0].mname} 및 ${data.length} 건`
+        const ocontent = `${data[0].mname} 및 ${data.length} 건`
         const ccid = this.state.ccid
-        const uid = this.state.uid
+        const uuid = this.state.uuid
         const order_data = {
-            user: uid,
-            cafe: ccid,
+            uuid: uuid,
+            ccid: ccid,
             oprice: price,
-            content: content
+            ocontent: ocontent,
+            ostatus: 0
         }
         console.log(order_data)
+        const token = localStorage.getItem("login_token")
+        const parsed = JSON.parse(token)
+        const headers = {
+            'Authorization': parsed
+        }
+        console.log(headers)
         const base_url = process.env.REACT_APP_SERVER_IP
-        axios.post(base_url + '/cafes/order/', order_data)
+        axios.post(base_url + '/order', order_data, {headers})
             .then(response => {
                 this.props.history.push('/latte/mypage');
                 console.log(response)
@@ -60,9 +67,9 @@ class Basket extends React.Component {
         if (basket !== undefined) {
             this.setState({
                 ccid: basket.ccid,
-                uid: basket.uid,
+                uuid: basket.uuid,
                 menus: basket.menus,
-            });    
+            });
         }
     }
 

@@ -1,35 +1,68 @@
 import {createStore} from 'redux';
+import jwtDecode from 'jwt-decode';
+// import axios from 'axios';
 
 export default createStore(function(state, action){
     if(state === undefined){
-        const user_data = localStorage.getItem("user_data")
-        const user_info = JSON.parse(user_data)
-        if(user_data){
+        const token = localStorage.getItem("login_token")
+        if(token){
+            const decoded_token = jwtDecode(token)
+            const info = decoded_token.member
+            // state.user_info = info
+            // if (info.role === 'HOST'){
+            //     console.log(token)
+            //     const ntoken = JSON.parse(token)
+            //     console.log(ntoken)
+            //     const headers = {
+            //         'Authorization': token
+            //     }
+            //     const base_url = process.env.REACT_APP_SERVER_IP
+            //     axios.post(base_url + '/cafe/searchMyCafe', {headers})
+            //     .then(response => {
+            //         console.log(response)
+            //     })
+            //     .catch(error => {
+            //         console.log('error')
+            //         console.error(error)
+            //     })
+            // }
             return {
-                user_info:user_info
+                user_info: info
             }
         }
         else return {
             user_info:  {
                 role: 'VISITOR',
+                uuid: '',
                 uid: '',
-                username: '',
+                uname: '',
+                uphone: '',
+                uemail: '',
                 unickname: '',
+                upic: '',
             }
         }
     }
     
+    // 로그인 요청으로 들어왔을때, action에는 axios로 따온 token이 들어있을 것이고, 이를 디코드해서 사용할 것이다!!
     if (action.type === 'LOGIN'){
-        const user_info = action.user_data
+        const token = action.token
+        const decoded_token = jwtDecode(token)
+        const user_info = decoded_token.member
+        console.log(user_info)
         state.user_info = user_info
     }
 
     if (action.type === 'LOGOUT'){
         state.user_info = {
             role: 'VISITOR',
+            uuid: '',
             uid: '',
-            username: '',
+            uname: '',
+            uphone: '',
+            uemail: '',
             unickname: '',
+            upic: '',
         }
     }
 
@@ -37,7 +70,7 @@ export default createStore(function(state, action){
         if (state.basket === undefined) {
             state.basket = {
                 ccid:action.data.ccid,
-                uid:action.data.uid,
+                uuid:action.data.uuid,
                 menus:[action.data.menu]
             }
         } else {
@@ -53,6 +86,14 @@ export default createStore(function(state, action){
 
     if (action.type === 'BASKET_CLEAR') {
         state.basket = undefined;
+    }
+
+    if (action.type === 'pos') {
+        const crd = action.crd
+        state.pos = {
+            latitude: crd.latitude,
+            longitude: crd.longitude
+        }
     }
 
     return state;

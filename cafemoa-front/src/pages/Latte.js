@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-import { Main, CafeList, Login, Signup, NearCafe, CafeDetail, Order, Mypage, Basket } from '../tabs';
+import { Main, CafeList, Login, Signup, NearCafe, CafeDetail, Order, Mypage, Basket, MyCafeManage, MyCafeOrder } from '../tabs';
 // import LatteNavbar from '../headers/LatteNavbar';
 import Logout from '../components/Logout';
 import { KaKao, Naver } from '../components/index';
@@ -24,6 +24,9 @@ class Latte extends Component{
 
           <Route path="/latte/kakao" component={KaKao} />
           <Route path="/latte/naver" component={Naver} />
+
+          <Route path="/latte/mycafemanage" component={MyCafeManage} />
+          <Route path="/latte/mycafeorder" component={MyCafeOrder} />
         </div>
       );
     }

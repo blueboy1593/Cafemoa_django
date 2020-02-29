@@ -47,7 +47,7 @@ class CafeDetail extends React.Component {
         const base_url = process.env.REACT_APP_SERVER_IP
         // const ccid = this.props.location.cafe.ccid
         const ccid = this.props.match.params.value
-        axios.get(base_url + `/cafes/${ccid}/`)
+        axios.get(base_url + `/cafe/${ccid}/`)
             .then(response =>{
             console.log(response)
             this.setState({
@@ -71,11 +71,11 @@ class CafeDetail extends React.Component {
             <Row>
                 <Col span={1} />
                 <Col span={22}>
-                    <Card>
+                    <Card style={{ textAlign: 'center' }}>
                         <Card.Body>
                             <Row>
                                 <Col span={10}>
-                                    <Card.Img src={cafe.cpic} alt={cafe.cname}/>
+                                    <Card.Img src={cafe.cpic} alt={cafe.cname} style={{ width: '100%', height: '100%' }}/>
                                 </Col>
                                 <Col span={1} />
                                 <Col span={13}>
@@ -84,7 +84,11 @@ class CafeDetail extends React.Component {
                                         
                                     </Card.Subtitle>
                                     <Card.Text>
-                                        {cafe.cdes}
+                                        오픈 시간: {cafe.copen}<br></br>
+                                        종료 시간: {cafe.cclose}
+                                    </Card.Text>
+                                    <Card.Text>
+                                        {cafe.cdesc}
                                     </Card.Text>
                                     {function() {
                                         if (role === 'HOST' || role === 'GUEST') return (

@@ -14,7 +14,7 @@ class NearCafeList extends React.Component {
     state = {}
     componentDidMount(){
         const base_url = process.env.REACT_APP_SERVER_IP
-        axios.get(base_url + '/cafes')
+        axios.get(base_url + '/cafe/all')
             .then(response =>{
             this.setState({
                 cafeList: response.data
@@ -90,7 +90,7 @@ class NearCafeList extends React.Component {
                                     <List.Item.Meta style={{paddingTop:'10px'}}
                                         title={cafe.cname}
                                     />
-                                    {cafe.distance} m
+                                    나와의 거리: {cafe.distance} m
                                     </Col>
                                     </Row>
                                 </Card> 

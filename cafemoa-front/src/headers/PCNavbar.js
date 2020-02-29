@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 import store from '../store';
 import { Modal, Button} from 'antd';
 import Login from '../tabs/Login';
-import './latte.css';
+// import './a.css';
 
-export default class LatteNavbar extends Component {
+export default class PCNavbar extends Component {
   state = { visible: false
   };
 
@@ -28,34 +28,37 @@ export default class LatteNavbar extends Component {
       visible: false,
     });
   };
+
+
   render() {
     const role = store.getState().user_info.role
+    console.log(role)
     return (
       <div>
-        <Navbar bg="fade" expand="lg" className="latte">
-        <Navbar.Toggle aria-controls="basic-navbar-nav" className="latte"/>
-          <Navbar.Collapse id="basic-navbar-nav" className="latte">
+        <Navbar bg="fade" expand="lg" className="PC">
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             {
               (function() {
                 if (role === 'HOST') return (
                   <>
-                    <Link to='/latte' className="menuBarItem"><p className="menuBar_list">카페정보</p></Link>
-                    <Link to='/latte/mycafeorder' className="menuBarItem"><p className="menuBar_list">주문관리</p></Link>
-                    <Link to='/latte/mycafemanage' className="menuBarItem"><p className="menuBar_list">내카페관리</p></Link>
+                    <Link to='/latte' className="menuBarItemPC"><p className="menuBar_listPC">카페정보</p></Link>
+                    <Link to='/latte/mycafeorder' className="menuBarItemPC"><p className="menuBar_listPC">주문관리</p></Link>
+                    <Link to='/latte/mycafemanage' className="menuBarItemPC"><p className="menuBar_listPC">내카페관리</p></Link>
                   </>
                 );
                 else if (role === 'GUEST') return (
                   <>
-                    <Link to='/latte' className="menuBarItem"><p className="menuBar_list">카페정보</p></Link>
-                    <Link to='/latte/nearcafe' className="menuBarItem"><p className="menuBar_list">주변카페</p></Link>
-                    <Link to='/latte/basket' className="menuBarItem"><p className="menuBar_list">장바구니</p></Link>
+                    <Link to='/latte' className="menuBarItemPC"><p className="menuBar_listPC">카페정보</p></Link>
+                    <Link to='/latte/nearcafe' className="menuBarItemPC"><p className="menuBar_listPC">주변카페</p></Link>
+                    <Link to='/latte/basket' className="menuBarItemPC"><p className="menuBar_listPC">장바구니</p></Link>
                   </>
                 )
                 else return (
                   <>
-                  <Link to='/latte' className="menuBarItem"><p className="menuBar_list">카페정보</p></Link>
-                  <Link to='/latte/nearcafe' className="menuBarItem"><p className="menuBar_list">주변카페</p></Link>
+                  <Link to='/latte' className="menuBarItemPC"><p className="menuBar_listPC">카페정보</p></Link>
+                  <Link to='/latte/nearcafe' className="menuBarItemPC"><p className="menuBar_listPC">주변카페</p></Link>
                   </>
                 );
               })()
@@ -66,14 +69,14 @@ export default class LatteNavbar extends Component {
               (function() {
                 if (role === 'HOST' || role === 'GUEST') return (
                   <>
-                    <Link to='/latte/mypage' className="menuBarItem"><p className="menuBar_list">마이페이지</p></Link>
-                    <Link to='/latte/logout' className="menuBarItem"><p className="menuBar_list">로그아웃</p></Link>
+                    <Link to='/latte/mypage' className="menuBarItemPC"><p className="menuBar_listPC">마이페이지</p></Link>
+                    <Link to='/latte/logout' className="menuBarItemPC"><p className="menuBar_listPC">로그아웃</p></Link>
                   </>
                 );
                 else return (
                   <>
                     <div>
-                    <Button type="link" onClick={this.showModal} className="menuBarItem"><p className="menuBar_list">로그인</p></Button>
+                    <Button type="link" onClick={this.showModal} className="menuBarItemPC"><p className="menuBar_listPC">로그인</p></Button>
                     <Modal
                       title="로 그 인"
                       visible={this.state.visible}
@@ -85,7 +88,7 @@ export default class LatteNavbar extends Component {
                   
                     </Modal>
                   </div>
-                    <Link to='/latte/signup' className="menuBarItem"><p className="menuBar_list">회원가입</p></Link>
+                    <Link to='/latte/signup' className="menuBarItemPC"><p className="menuBar_listPC">회원가입</p></Link>
                   </>
                 );
               }).bind(this)()
@@ -100,8 +103,8 @@ export default class LatteNavbar extends Component {
                   className="d-inline-block align-top main_logo"
               />{' '}
             </Link>
-          </Navbar.Brand >
-          <Nav className="MyPage" >
+          </Navbar.Brand>
+          <Nav className="MyPage">
             <Link to='/latte/mypage'>
             <img alt="모아 로고"
                 src="/img/myPage_icon.png"

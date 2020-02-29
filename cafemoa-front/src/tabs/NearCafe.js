@@ -3,7 +3,7 @@ import Kakaomap from '../components/Kakaomap';
 import NearCafeList from '../components/NearCafeList';
 import { Divider } from 'antd';
 import LatteNavbar from '../headers/LatteNavbar';
-
+import store from '../store';
 
 export default class NearCafe extends Component {
   constructor(props){
@@ -17,6 +17,8 @@ export default class NearCafe extends Component {
 
   success(pos) {
     const crd = pos.coords;
+    console.log(crd)
+    store.dispatch({type:'pos', crd: crd})
     this.setState({
       latitude: crd.latitude,
       longitude: crd.longitude
@@ -28,9 +30,21 @@ export default class NearCafe extends Component {
     navigator.geolocation.getCurrentPosition(this.success);
     return
   }
+  componentDidMount(){
+    const pos = store.getState().pos
+    if (pos === undefined) {
+      this.geolocation()
+    }
+    else {
+      this.setState({
+        latitude: pos.latitude,
+        longitude: pos.longitude
+      })
+    }
+  }
 
   render() {
-    this.geolocation()
+    // this.geolocation()
     return (
       <div>
         <LatteNavbar></LatteNavbar>

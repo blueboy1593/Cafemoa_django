@@ -23,7 +23,7 @@ class Order extends React.Component {
         const base_url = process.env.REACT_APP_SERVER_IP
         const ccid = this.props.location.ccid
 
-        axios.get(base_url + `/cafes/menus/${ccid}`)
+        axios.get(base_url + `/menu/${ccid}`)
             .then(response =>{
             this.setState({
                 menulist: response.data
@@ -39,25 +39,25 @@ class Order extends React.Component {
         const ccid = this.props.location.ccid
         const menulist = this.state.menulist
         const coffelist = menulist.filter(menu => {
-            if (menu.mtype === "coffee") {
+            if (menu.mtype === 1) {
                 return menu
             }
             return null;
         })
         const juicelist = menulist.filter(menu => {
-            if (menu.mtype === "juice") {
+            if (menu.mtype === 2) {
                 return menu
             }
             return null;
         })
         const tealist = menulist.filter(menu => {
-            if (menu.mtype === "tea") {
+            if (menu.mtype === 3) {
                 return menu
             }
             return null;
         })
         const dessertlist = menulist.filter(menu => {
-            if (menu.mtype === "dessert") {
+            if (menu.mtype === 4) {
                 return menu
             }
             return null;
