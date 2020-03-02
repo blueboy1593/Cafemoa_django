@@ -51,7 +51,7 @@ class Basket extends React.Component {
         const base_url = process.env.REACT_APP_SERVER_IP
         axios.post(base_url + '/order', order_data, {headers})
             .then(response => {
-                this.props.history.push('/latte/mypage');
+                this.props.history.push('/latte/orderdone');
                 console.log(response)
             })
             .catch(error => {

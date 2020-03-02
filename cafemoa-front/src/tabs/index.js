@@ -9,3 +9,4 @@ export { default as Basket } from './Basket';
 export { default as Main } from './Main';
 export { default as MyCafeManage } from './MyCafeManage';
 export { default as MyCafeOrder } from './MyCafeOrder';
+export { default as OrderDone } from './OrderDone';
